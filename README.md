@@ -1,1 +1,1 @@
-topmob.github.io/game
+ссылка на [сайт](https://topmob.github.io/game/)
