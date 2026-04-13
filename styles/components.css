@@ -17,12 +17,14 @@
 .topbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
 }
 
 .search-wrap {
   width: min(560px, 100%);
+  display: grid;
+  gap: 8px;
 }
 
 .search-input {
@@ -32,6 +34,12 @@
   background: #090d1a;
   color: var(--text);
   padding: 12px;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .nav-link {
@@ -154,8 +162,9 @@
 .viewer-media img {
   width: 100%;
   max-height: 74vh;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px;
+  background: #05070f;
 }
 
 .viewer-details {
@@ -172,6 +181,11 @@
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(2, minmax(110px, 1fr));
+}
+
+.source-link {
+  color: var(--primary);
+  text-decoration: none;
 }
 
 .back-link {

@@ -5,7 +5,9 @@ const initialState = {
   mediaType: 'all',
   sortBy: 'latest',
   currentItem: null,
-  loading: false
+  loading: false,
+  error: '',
+  tagSuggestions: []
 };
 
 export function createStore() {

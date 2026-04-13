@@ -1,30 +1,37 @@
-import { mockContent } from '../data/mockContent.js';
-import { createApiClient } from './apiClient.js';
-import { normalizeCollection, normalizeMediaItem } from './normalizer.js';
+import { getRuntimeConfig } from '../config/runtime.js';
+import { normalizeCollection, normalizeMediaItem, normalizeTags } from './normalizer.js';
+import { createLocalProvider } from './providers/LocalProvider.js';
+import { createSupabaseProvider } from './providers/SupabaseProvider.js';
 
-function createLocalProvider() {
-  return {
-    async fetchMedia() {
-      return mockContent;
-    },
-    async fetchById(id) {
-      return mockContent.find((item) => item.id === id) || null;
-    }
-  };
+function resolveProvider(config) {
+  const configured = Boolean(config.functionsBase && config.supabaseAnonKey);
+  if (configured) {
+    return createSupabaseProvider({
+      functionsBase: config.functionsBase,
+      anonKey: config.supabaseAnonKey
+    });
+  }
+  return createLocalProvider();
 }
 
 export function createRepository() {
-  const client = createApiClient({ provider: createLocalProvider() });
+  const config = getRuntimeConfig();
+  const provider = resolveProvider(config);
 
-  async function getMedia() {
-    const items = await client.fetchMedia();
-    return normalizeCollection(items);
+  async function searchMedia({ query = '', tags = [], mediaType = 'all', limit = 48, page = 0 }) {
+    const raw = await provider.searchPosts({ query, tags, mediaType, limit, page });
+    return normalizeCollection(raw);
   }
 
   async function getMediaById(id) {
-    const item = await client.fetchById(id);
-    return item ? normalizeMediaItem(item) : null;
+    const raw = await provider.getPostById(id);
+    return raw ? normalizeMediaItem(raw) : null;
   }
 
-  return { getMedia, getMediaById };
+  async function searchTags(term, limit = 12) {
+    const raw = await provider.searchTags(term, limit);
+    return normalizeTags(raw);
+  }
+
+  return { searchMedia, getMediaById, searchTags };
 }

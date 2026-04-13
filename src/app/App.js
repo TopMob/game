@@ -12,6 +12,7 @@ import { applyFilters, uniqueTags } from '../utils/format.js';
 export function createApp(root) {
   const repository = createRepository();
   const store = createStore();
+  let searchTimer = null;
 
   const router = createRouter({
     onRouteChange: async (route) => {
@@ -23,25 +24,72 @@ export function createApp(root) {
     }
   });
 
-  async function bootstrap() {
-    store.setState({ loading: true });
-    const content = await repository.getMedia();
-    store.setState({ content, loading: false });
+  async function loadContent() {
+    const state = store.getState();
+    try {
+      store.setState({ loading: true, error: '' });
+      const content = await repository.searchMedia({
+        query: state.query,
+        tags: state.activeTags,
+        mediaType: state.mediaType,
+        limit: 48,
+        page: 0
+      });
+      store.setState({ content, loading: false });
+    } catch (error) {
+      store.setState({ loading: false, error: String(error.message || error) });
+    }
+  }
+
+  async function loadTagSuggestions(term) {
+    if (!term.trim()) {
+      store.setState({ tagSuggestions: [] });
+      return;
+    }
+    try {
+      const tags = await repository.searchTags(term, 8);
+      store.setState({ tagSuggestions: tags });
+    } catch {
+      store.setState({ tagSuggestions: [] });
+    }
+  }
+
+  function scheduleSearch() {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      loadContent();
+    }, 320);
   }
 
   function bindActions() {
     return {
-      onSearch: (query) => store.setState({ query }),
+      onSearch: (query) => {
+        store.setState({ query });
+        loadTagSuggestions(query);
+        scheduleSearch();
+      },
       onTagToggle: (tag) => {
         const { activeTags } = store.getState();
         const next = activeTags.includes(tag) ? activeTags.filter((item) => item !== tag) : [...activeTags, tag];
         store.setState({ activeTags: next });
+        loadContent();
+      },
+      onPickSuggestion: (tagName) => {
+        const { activeTags } = store.getState();
+        if (!activeTags.includes(tagName)) {
+          store.setState({ activeTags: [...activeTags, tagName], query: '' });
+          loadContent();
+        }
       },
       onTagSelect: (tag) => {
-        store.setState({ activeTags: [tag] });
+        store.setState({ activeTags: [tag], query: '' });
+        loadContent();
         router.navigate('#/discover');
       },
-      onTypeChange: (mediaType) => store.setState({ mediaType }),
+      onTypeChange: (mediaType) => {
+        store.setState({ mediaType });
+        loadContent();
+      },
       onSortChange: (sortBy) => store.setState({ sortBy }),
       onOpen: (id) => router.navigate(`#/view/${id}`),
       onNavigate: (route) => router.navigate(route)
@@ -61,7 +109,12 @@ export function createApp(root) {
     main.className = 'main';
 
     main.append(
-      Header({ onSearch: actions.onSearch, query: state.query }),
+      Header({
+        onSearch: actions.onSearch,
+        query: state.query,
+        tagSuggestions: state.tagSuggestions,
+        onPickSuggestion: actions.onPickSuggestion
+      }),
       FilterPanel({
         tags,
         activeTags: state.activeTags,
@@ -72,6 +125,13 @@ export function createApp(root) {
         onSortChange: actions.onSortChange
       })
     );
+
+    if (state.error) {
+      const errorBlock = document.createElement('section');
+      errorBlock.className = 'page';
+      errorBlock.textContent = state.error;
+      main.append(errorBlock);
+    }
 
     if (route.section === 'home') {
       main.append(HomePage({ items: filtered.slice(0, 24), onOpen: actions.onOpen }));
@@ -96,7 +156,7 @@ export function createApp(root) {
   }
 
   function mount() {
-    bootstrap().then(() => {
+    loadContent().then(() => {
       store.subscribe(() => render());
       router.start();
     });

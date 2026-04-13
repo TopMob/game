@@ -13,18 +13,16 @@ export function uniqueTags(items) {
 export function applyFilters(items, state) {
   const query = state.query.trim().toLowerCase();
   const tags = state.activeTags;
-  const type = state.mediaType;
   const sorted = [...items];
 
   const filtered = sorted.filter((item) => {
-    const matchesQuery = !query || `${item.title} ${item.creator} ${item.tags.join(' ')}`.toLowerCase().includes(query);
-    const matchesType = type === 'all' || item.mediaType === type;
+    const matchesQuery = !query || `${item.title} ${item.tags.join(' ')}`.toLowerCase().includes(query);
     const matchesTags = tags.length === 0 || tags.every((tag) => item.tags.includes(tag));
-    return matchesQuery && matchesType && matchesTags;
+    return matchesQuery && matchesTags;
   });
 
   if (state.sortBy === 'latest') {
-    filtered.sort((a, b) => new Date(b.postedAt) - new Date(a.postedAt));
+    filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   }
 
   if (state.sortBy === 'top') {
