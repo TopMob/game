@@ -1,0 +1,32 @@
+.topbar,
+.filter-panel,
+.page,
+.viewer,
+.card,
+.sidebar {
+  position: relative;
+}
+
+.topbar::after,
+.filter-panel::after,
+.page::after,
+.viewer::after,
+.card::after,
+.sidebar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(71, 245, 255, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.18s ease;
+}
+
+::selection {
+  background: rgba(255, 79, 216, 0.4);
+  color: #fff;
+}

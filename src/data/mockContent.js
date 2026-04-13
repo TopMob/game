@@ -1,0 +1,80 @@
+export const mockContent = [
+  {
+    id: 'pulse-001',
+    title: 'Neon Alley Drift',
+    creator: 'VectorDusk',
+    preview: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1000&q=80',
+    source: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1600&q=80',
+    mediaType: 'image',
+    rating: 'safe',
+    score: 921,
+    tags: ['cityscape', 'neon', 'night', 'rain', 'cyberpunk'],
+    postedAt: '2026-03-29T17:30:00Z',
+    description: 'Плотная атмосфера мегаполиса с акцентом на свет и отражения.'
+  },
+  {
+    id: 'pulse-002',
+    title: 'Orbit Runner',
+    creator: 'HyperAxis',
+    preview: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1000&q=80',
+    source: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=80',
+    mediaType: 'image',
+    rating: 'safe',
+    score: 740,
+    tags: ['space', 'stars', 'retro', 'synthwave'],
+    postedAt: '2026-02-18T10:00:00Z',
+    description: 'Ретро-футуристичный арт с плотным градиентом и мягкой зернистостью.'
+  },
+  {
+    id: 'pulse-003',
+    title: 'Signal Ghost',
+    creator: 'NyxNode',
+    preview: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80',
+    source: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80',
+    mediaType: 'video',
+    rating: 'safe',
+    score: 1180,
+    tags: ['glitch', 'abstract', 'scanline', 'terminal'],
+    postedAt: '2026-04-05T19:12:00Z',
+    description: 'Динамичный визуал в духе старых терминалов и цифрового шума.'
+  },
+  {
+    id: 'pulse-004',
+    title: 'Chrome Bloom',
+    creator: 'AstraMelt',
+    preview: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=80',
+    source: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1600&q=80',
+    mediaType: 'image',
+    rating: 'safe',
+    score: 860,
+    tags: ['portrait', 'color', 'neon', 'fashion'],
+    postedAt: '2026-01-20T11:05:00Z',
+    description: 'Портретная работа с насыщенной неоновой палитрой и контрастом.'
+  },
+  {
+    id: 'pulse-005',
+    title: 'Datastream Core',
+    creator: 'MonoTrace',
+    preview: 'https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?auto=format&fit=crop&w=1000&q=80',
+    source: 'https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?auto=format&fit=crop&w=1600&q=80',
+    mediaType: 'gif',
+    rating: 'safe',
+    score: 690,
+    tags: ['ui', 'grid', 'minimal', 'loop'],
+    postedAt: '2026-04-09T08:40:00Z',
+    description: 'Анимированная карточка с акцентом на сетки и системную эстетику.'
+  },
+  {
+    id: 'pulse-006',
+    title: 'Midnight Drive',
+    creator: 'Roadline',
+    preview: 'https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=80',
+    source: 'https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1600&q=80',
+    mediaType: 'image',
+    rating: 'safe',
+    score: 1012,
+    tags: ['car', 'cityscape', 'night', 'synthwave'],
+    postedAt: '2026-03-14T23:10:00Z',
+    description: 'Ночной заезд по городу в эстетике классического synthwave.'
+  }
+];
