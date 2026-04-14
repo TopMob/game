@@ -1,4 +1,6 @@
-export function createHomePage({ history }) {
+import { createPosterCard } from '../components/posterCard.js';
+
+export function createHomePage({ history, collections }) {
   const section = document.createElement('section');
   section.className = 'page';
 
@@ -10,12 +12,39 @@ export function createHomePage({ history }) {
   const filterRow = document.createElement('div');
   filterRow.className = 'filter-row';
 
-  ['Top', 'Trand', 'Created'].forEach((item) => {
-    const filterButton = document.createElement('button');
-    filterButton.type = 'button';
-    filterButton.className = 'btn btn--filter';
-    filterButton.textContent = item;
-    filterRow.append(filterButton);
+  collections.forEach((item) => {
+    const card = createPosterCard({
+      title: item.title,
+      subtitle: item.subtitle,
+      ratio: 'tall',
+      onClick: () => {
+        const target = section.querySelector(`#jump-${item.key}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+    filterRow.append(card);
+  });
+
+  const jumpBoard = document.createElement('div');
+  jumpBoard.className = 'jump-board';
+
+  collections.forEach((item) => {
+    const panel = document.createElement('article');
+    panel.className = 'jump-panel';
+    panel.id = `jump-${item.key}`;
+
+    const title = document.createElement('h3');
+    title.className = 'jump-panel__title';
+    title.textContent = item.jumpTitle;
+
+    const text = document.createElement('p');
+    text.className = 'jump-panel__text';
+    text.textContent = item.jumpText;
+
+    panel.append(title, text);
+    jumpBoard.append(panel);
   });
 
   const historyBox = document.createElement('div');
@@ -34,6 +63,6 @@ export function createHomePage({ history }) {
     historyBox.append(entry);
   });
 
-  section.append(heroButton, filterRow, historyBox);
+  section.append(heroButton, filterRow, jumpBoard, historyBox);
   return section;
 }

@@ -1,10 +1,12 @@
 import { pages } from './state.js';
 import { createHomePage } from './pages/homePage.js';
 import { createSimplePage } from './pages/simplePage.js';
+import { createSavedPage } from './pages/savedPage.js';
+import { createSettingsPage } from './pages/settingsPage.js';
 
 export function renderPage(state) {
   if (state.page === pages.home) {
-    return createHomePage({ history: state.history });
+    return createHomePage({ history: state.history, collections: state.homeCollections });
   }
 
   if (state.page === pages.account) {
@@ -15,14 +17,8 @@ export function renderPage(state) {
   }
 
   if (state.page === pages.saved) {
-    return createSimplePage({
-      title: 'Сохранённые посты',
-      lines: ['Подборка: cyberpunk street', 'Подборка: retro wave', 'Подборка: atomic style']
-    });
+    return createSavedPage({ posts: state.savedPosts });
   }
 
-  return createSimplePage({
-    title: 'Настройки',
-    lines: ['Тема: Cyber Retro', 'Вид карточек: Compact', 'Язык интерфейса: Русский']
-  });
+  return createSettingsPage({ options: state.settings });
 }
