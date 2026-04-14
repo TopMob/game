@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theme Showcase</title>
+    <title>Theme Showcase Laboratory</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="layout-row">
-        <h1>Дизайн-стенд</h1>
+        <h1>UI Laboratory</h1>
         <div class="controls">
             <label for="themeSelect">Тема</label>
             <select id="themeSelect"></select>
@@ -16,29 +16,12 @@
         </div>
     </header>
 
-    <main class="layout-grid">
-        <article class="card">
-            <div class="meta-row">
-                <strong id="themeCounter"></strong>
-            </div>
-            <h2 id="themeTitle"></h2>
-            <p id="themeDescription"></p>
-            <div class="chips" id="themeTags"></div>
-            <button class="action-btn" type="button">Подтвердить</button>
-        </article>
-        <section class="panel">
-            <h3>Превью элементов</h3>
-            <p>Ниже блоки для быстрой проверки контраста, форм и акцентных цветов.</p>
-            <div class="sample-row">
-                <a class="sample-link" href="#">Ссылка интерфейса</a>
-                <input class="sample-input" type="text" placeholder="Поле ввода">
-            </div>
-            <div class="progress-wrap">
-                <span>Прогресс</span>
-                <div class="progress-bar"><i></i></div>
-            </div>
-        </section>
-    </main>
+    <main id="labGrid" class="lab-grid"></main>
+
+    <aside class="toast" role="status" aria-live="polite">
+        <strong>Theme Test Mode</strong>
+        <span>Проверяй контраст, глубину, анимации и читабельность.</span>
+    </aside>
 
     <script type="module" src="app.js"></script>
 </body>

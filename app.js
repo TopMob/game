@@ -1,8 +1,14 @@
 import { themes, defaultThemeId } from './themes.js';
 import { applyTheme, normalizeThemeList } from './theme-engine.js';
+import { renderLab, initLabInteractions } from './lab.js';
 
+const labGrid = document.getElementById('labGrid');
 const themeSelect = document.getElementById('themeSelect');
 const randomThemeButton = document.getElementById('randomTheme');
+
+renderLab(labGrid);
+initLabInteractions();
+
 const titleNode = document.getElementById('themeTitle');
 const descriptionNode = document.getElementById('themeDescription');
 const tagsNode = document.getElementById('themeTags');
