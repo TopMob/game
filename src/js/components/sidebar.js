@@ -3,6 +3,7 @@ import { pages } from '../state.js';
 const items = [
   { label: 'Аккаунт', page: pages.account },
   { label: 'Сохранённые посты', page: pages.saved },
+  { label: 'Скрытые посты', page: pages.hidden },
   { label: 'Настройки', page: pages.settings }
 ];
 

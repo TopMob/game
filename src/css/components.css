@@ -73,6 +73,17 @@
   gap: 14px;
 }
 
+.home-filter {
+  display: grid;
+  gap: 8px;
+}
+
+.home-filter__label {
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+}
+
 .poster-card {
   border: 1px solid var(--border);
   background: linear-gradient(160deg, rgba(13, 20, 31, 0.95), rgba(19, 30, 45, 0.95));
@@ -115,14 +126,6 @@
 
 .poster-card--tall .poster-card__art {
   aspect-ratio: 3 / 4;
-}
-
-.poster-card--wide .poster-card__art {
-  aspect-ratio: 16 / 9;
-}
-
-.poster-card--square .poster-card__art {
-  aspect-ratio: 1 / 1;
 }
 
 .poster-card--saved .poster-card__art {
@@ -192,8 +195,112 @@
   font-size: 0.85rem;
 }
 
-@media (max-width: 780px) {
-  .filter-row {
-    grid-template-columns: 1fr;
-  }
+.posts-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.posts-search {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 20px;
+}
+
+.posts-feed {
+  display: grid;
+  gap: 16px;
+}
+
+.post-card {
+  border: 1px solid var(--border);
+  background: rgba(12, 19, 29, 0.86);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.post-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.post-card__info {
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.post-card__meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.post-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.post-actions__btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.filter-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(90vw, 480px);
+  height: 100vh;
+  padding: 82px 16px 20px;
+  background: rgba(9, 14, 22, 0.98);
+  border-left: 1px solid var(--border);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  z-index: 35;
+  display: grid;
+  gap: 10px;
+  overflow: auto;
+}
+
+.filter-drawer--open {
+  transform: translateX(0);
+}
+
+.filter-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: rgba(15, 24, 36, 0.95);
+  color: var(--text-main);
+  padding: 10px;
+}
+
+.filter-subtitle {
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.filter-row-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-chip {
+  border-radius: 8px;
+}
+
+.filter-chip.active {
+  border-color: var(--accent);
+}
+
+.filter-apply {
+  margin-top: auto;
+  border-radius: 10px;
+  min-height: 44px;
 }

@@ -1,6 +1,6 @@
 import { createPosterCard } from '../components/posterCard.js';
 
-export function createHomePage({ history, collections, todayPicks }) {
+export function createHomePage({ history, collections, onOpenPosts }) {
   const section = document.createElement('section');
   section.className = 'page';
 
@@ -8,32 +8,35 @@ export function createHomePage({ history, collections, todayPicks }) {
   heroButton.type = 'button';
   heroButton.className = 'btn hero-action';
   heroButton.textContent = 'Rule34';
+  heroButton.addEventListener('click', () => {
+    onOpenPosts({ sort: 'created', scoreMin: 50 });
+  });
 
   const filterRow = document.createElement('div');
   filterRow.className = 'filter-row';
 
   collections.forEach((item) => {
+    const stack = document.createElement('div');
+    stack.className = 'home-filter';
+
+    const label = document.createElement('button');
+    label.type = 'button';
+    label.className = 'btn home-filter__label';
+    label.textContent = item.title;
+    label.addEventListener('click', () => {
+      onOpenPosts({ sort: item.sort, scoreMin: item.scoreMin });
+    });
+
     const card = createPosterCard({
       title: item.title,
-      ratio: 'tall'
+      ratio: 'tall',
+      onClick: () => {
+        onOpenPosts({ sort: item.sort, scoreMin: item.scoreMin });
+      }
     });
-    filterRow.append(card);
-  });
 
-  const picksBox = document.createElement('div');
-  picksBox.className = 'page-box card-list';
-
-  const picksTitle = document.createElement('h2');
-  picksTitle.className = 'history__title';
-  picksTitle.textContent = 'Today picks';
-
-  picksBox.append(picksTitle);
-
-  todayPicks.forEach((pick) => {
-    const item = document.createElement('div');
-    item.className = 'card';
-    item.textContent = pick;
-    picksBox.append(item);
+    stack.append(label, card);
+    filterRow.append(stack);
   });
 
   const historyBox = document.createElement('div');
@@ -52,6 +55,6 @@ export function createHomePage({ history, collections, todayPicks }) {
     historyBox.append(entry);
   });
 
-  section.append(heroButton, filterRow, picksBox, historyBox);
+  section.append(heroButton, filterRow, historyBox);
   return section;
 }
