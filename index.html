@@ -10,21 +10,18 @@
     <header>
         <h1>Дизайн-стенд</h1>
         <div class="theme-switcher">
-            <select id="themeSelect">
-                <option value="atomic-heart">Atomic Heart Retro</option>
-                <option value="cyberpunk">Cyberpunk 2077</option>
-                <option value="glassmorphism">Modern Glass</option>
-                <option value="vaporwave">80s Vaporwave</option>
-            </select>
+            <label for="themeSelect">Тема</label>
+            <select id="themeSelect"></select>
         </div>
     </header>
     <main>
         <article class="card">
-            <h2>Демонстрация стиля</h2>
-            <p>Этот интерактивный блок показывает, как глобально меняются цвета, шрифты, тени и формы элементов интерфейса. Выберите другой стиль в меню сверху, чтобы увидеть трансформацию.</p>
+            <h2 id="themeTitle">Демонстрация стиля</h2>
+            <p id="themeDescription">Этот интерактивный блок показывает, как глобально меняются цвета, шрифты, тени и формы элементов интерфейса. Выберите другой стиль в меню сверху, чтобы увидеть трансформацию.</p>
+            <div class="chips" id="themeTags"></div>
             <button class="action-btn">Подтвердить</button>
         </article>
     </main>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>
