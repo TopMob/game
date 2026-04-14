@@ -280,7 +280,279 @@ export const themes = [
         contrast: 'средний',
         description: 'Хром, коралл и формы эпохи «будущего из прошлого».',
         tokens: { ...base, bg: '#2D5A27', bgGradient: 'radial-gradient(circle at 30% 20%,#4F7D47 0%,#2D5A27 65%)', surface: '#E2E8F0', text: '#1A202C', accent: '#FB923C', accentAlt: '#CBD5E1', borderColor: '#718096', chip: 'rgba(251,146,60,0.2)', buttonText: '#2B1A0D', radius: '26px', font: "'Manrope', sans-serif", shadow: '0 14px 26px rgba(10,24,9,0.35)', effect: 'raygun' }
-    }
+    },
+
+    {
+        id: 'frozen-carbon',
+        name: 'Frozen Carbon',
+        family: 'Materiality',
+        mood: 'технический матовый',
+        contrast: 'средний',
+        description: 'Плетение карбона, объемный пластик и холодный инженерный характер.',
+        tokens: { ...base, bg: '#121316', bgGradient: 'repeating-linear-gradient(45deg,#121316 0 8px,#1B1D22 8px 16px)', surface: '#1C1F24', text: '#E1E4EA', accent: '#5F6C7B', accentAlt: '#2E343E', borderColor: '#2E343E', chip: 'rgba(95,108,123,0.2)', buttonText: '#F6F8FC', radius: '10px', effect: 'carbon' }
+    },
+    {
+        id: 'polished-marble',
+        name: 'Polished Marble',
+        family: 'Materiality',
+        mood: 'античная роскошь',
+        contrast: 'средний',
+        description: 'Светлый мрамор с прожилками, золотые разделители и тяжелые тени.',
+        tokens: { ...base, bg: '#F8F8F6', bgGradient: 'linear-gradient(135deg,#F8F8F6 0%,#ECEBE9 100%)', surface: '#FFFFFF', text: '#2A2A2A', accent: '#B98A3D', accentAlt: '#8B8B8B', borderColor: '#B98A3D', chip: 'rgba(185,138,61,0.18)', buttonText: '#1D1710', radius: '12px', font: "'Playfair Display', serif", shadow: '0 20px 38px rgba(0,0,0,0.25)', effect: 'marble' }
+    },
+    {
+        id: 'liquid-mercury',
+        name: 'Liquid Mercury',
+        family: 'Materiality',
+        mood: 'хромированный футуризм',
+        contrast: 'высокий',
+        description: 'Холодный металл, зеркальный блеск и округлые 50% формы.',
+        tokens: { ...base, bg: '#9FA5AE', bgGradient: 'linear-gradient(160deg,#C2C8D0 0%,#8E949C 60%,#BFC6CF 100%)', surface: 'rgba(245,248,252,0.35)', text: '#111318', accent: '#ECEFF4', accentAlt: '#6F7680', borderColor: '#DCE1E8', chip: 'rgba(255,255,255,0.35)', buttonText: '#1E2229', radius: '50px', effect: 'mercury', surfaceOverlay: 'blur(5px)' }
+    },
+    {
+        id: 'recycled-plastic',
+        name: 'Recycled Plastic',
+        family: 'Materiality',
+        mood: 'эко-фанк',
+        contrast: 'средний',
+        description: 'Светлая масса с цветными вкраплениями и зернистой фактурой.',
+        tokens: { ...base, bg: '#E6E7E2', bgGradient: 'linear-gradient(180deg,#E6E7E2 0%,#D8D9D4 100%)', surface: '#F2F3EF', text: '#25302A', accent: '#3E9E7A', accentAlt: '#D97841', borderColor: '#88948B', chip: 'rgba(62,158,122,0.18)', buttonText: '#F2F8F4', radius: '20px', effect: 'plastic' }
+    },
+    {
+        id: 'velvet-night',
+        name: 'Velvet Night',
+        family: 'Materiality',
+        mood: 'мягкая тьма',
+        contrast: 'средний',
+        description: 'Бархатный синий, светопоглощающий фон и приглушённый свет.',
+        tokens: { ...base, bg: '#1B1330', bgGradient: 'radial-gradient(circle at 20% 10%,#2C1E4A 0%,#1B1330 65%)', surface: '#261B3F', text: '#E9E5F5', accent: '#7D5FB2', accentAlt: '#3B2A63', borderColor: '#3B2A63', chip: 'rgba(125,95,178,0.2)', buttonText: '#F5F2FF', radius: '18px', shadow: '0 20px 36px rgba(0,0,0,0.42)', effect: 'velvet' }
+    },
+    {
+        id: 'slasher-80s',
+        name: 'Slasher 80s',
+        family: 'Pop-Culture',
+        mood: 'vhs horror',
+        contrast: 'очень высокий',
+        description: 'Кровавый красный на черном, VHS-помехи и тревожная атмосфера.',
+        tokens: { ...base, bg: '#090707', bgGradient: 'linear-gradient(180deg,#090707 0%,#130808 100%)', surface: '#1A0B0B', text: '#F3D6D6', accent: '#D1001F', accentAlt: '#5C0D13', borderColor: '#D1001F', chip: 'rgba(209,0,31,0.22)', buttonText: '#FFECEC', font: "'Courier Prime', monospace", effect: 'vhs' }
+    },
+    {
+        id: 'fallout-pip-boy',
+        name: 'Fallout Pip-Boy',
+        family: 'Pop-Culture',
+        mood: 'rad-crt',
+        contrast: 'высокий',
+        description: 'Монохромный ламповый зеленый интерфейс с сеткой сканирования.',
+        tokens: { ...base, bg: '#061005', bgGradient: 'linear-gradient(180deg,#061005 0%,#0B140A 100%)', surface: '#0D1E0D', text: '#7BFF6F', accent: '#42D94B', accentAlt: '#1C6F22', borderColor: '#1C6F22', chip: 'rgba(66,217,75,0.18)', buttonText: '#021A04', font: "'Fira Code', monospace", effect: 'pipboy' }
+    },
+    {
+        id: 'dune-arrakis',
+        name: 'Dune Arrakis',
+        family: 'Pop-Culture',
+        mood: 'песчаный брутализм',
+        contrast: 'высокий',
+        description: 'Песок и жара: оранжево-бежевые грани с резкими углами.',
+        tokens: { ...base, bg: '#2D1C0E', bgGradient: 'linear-gradient(180deg,#2D1C0E 0%,#6A3D13 100%)', surface: '#A56B2E', text: '#F6DEC2', accent: '#E3842E', accentAlt: '#2A1307', borderColor: '#2A1307', chip: 'rgba(246,222,194,0.18)', buttonText: '#2D1203', radius: '4px', effect: 'dune' }
+    },
+    {
+        id: 'biohazard',
+        name: 'Biohazard',
+        family: 'Pop-Culture',
+        mood: 'danger zone',
+        contrast: 'очень высокий',
+        description: 'Черно-желтый карантинный сигнал с предупреждающими полосами.',
+        tokens: { ...base, bg: '#0A0A0A', bgGradient: 'linear-gradient(180deg,#0A0A0A 0%,#1A1A1A 100%)', surface: '#181818', text: '#FFF9CF', accent: '#FFD600', accentAlt: '#4D4200', borderColor: '#FFD600', chip: 'rgba(255,214,0,0.2)', buttonText: '#261F00', radius: '6px', borderWidth: '2px', effect: 'biohazard' }
+    },
+    {
+        id: 'tron-legacy',
+        name: 'Tron Legacy',
+        family: 'Pop-Culture',
+        mood: 'neon grid',
+        contrast: 'высокий',
+        description: 'Темная сетка и неоновые голубые контуры в режиме outline-only.',
+        tokens: { ...base, bg: '#080E1A', bgGradient: 'linear-gradient(180deg,#080E1A 0%,#060A11 100%)', surface: 'transparent', text: '#C9ECFF', accent: '#00B8FF', accentAlt: '#0077A6', borderColor: '#00B8FF', chip: 'rgba(0,184,255,0.16)', buttonText: '#00192A', shadow: '0 0 14px rgba(0,184,255,0.35)', effect: 'tron' }
+    },
+    {
+        id: 'blueprint-cyanotype',
+        name: 'Blueprint Cyanotype',
+        family: 'Art & History',
+        mood: 'чертежный',
+        contrast: 'высокий',
+        description: 'Синька с осями, сеткой и легким рукописным ощущением.',
+        tokens: { ...base, bg: '#0A2A63', bgGradient: 'linear-gradient(180deg,#0A2A63 0%,#123E8A 100%)', surface: '#0F377B', text: '#F3FAFF', accent: '#FFFFFF', accentAlt: '#7CB7FF', borderColor: '#FFFFFF', chip: 'rgba(255,255,255,0.18)', buttonText: '#0A2A63', font: "'Fira Code', monospace", effect: 'cyanotype' }
+    },
+    {
+        id: 'bauhaus-original',
+        name: 'Bauhaus Original',
+        family: 'Art & History',
+        mood: 'геометрический модернизм',
+        contrast: 'высокий',
+        description: 'Белая база с чистыми первичными цветами и базовыми формами.',
+        tokens: { ...base, bg: '#FFFFFF', bgGradient: 'none', surface: '#FFFFFF', text: '#111111', accent: '#E63946', accentAlt: '#1D4ED8', borderColor: '#111111', chip: 'rgba(245,196,0,0.25)', buttonText: '#FFFFFF', radius: '0px', shadow: 'none', effect: 'bauhaus' }
+    },
+    {
+        id: 'ukiyo-e',
+        name: 'Ukiyo-e',
+        family: 'Art & History',
+        mood: 'японская гравюра',
+        contrast: 'средний',
+        description: 'Морская волна, бумага и красный акцент в стиле старых оттисков.',
+        tokens: { ...base, bg: '#E8DDC9', bgGradient: 'linear-gradient(180deg,#E8DDC9 0%,#DCCFB8 100%)', surface: '#F5EBD9', text: '#223A53', accent: '#B13A2A', accentAlt: '#3D6B88', borderColor: '#3D6B88', chip: 'rgba(177,58,42,0.18)', buttonText: '#FFF7EE', font: "'Playfair Display', serif", effect: 'ukiyoe' }
+    },
+    {
+        id: 'art-deco',
+        name: 'Art Deco',
+        family: 'Art & History',
+        mood: 'gatsby luxe',
+        contrast: 'высокий',
+        description: 'Черно-золотая элегантность с геометрическим паттерном деко.',
+        tokens: { ...base, bg: '#0B0A0A', bgGradient: 'linear-gradient(180deg,#0B0A0A 0%,#151212 100%)', surface: '#171414', text: '#F3E4BC', accent: '#D4AF37', accentAlt: '#6E5520', borderColor: '#D4AF37', chip: 'rgba(212,175,55,0.18)', buttonText: '#2A1D06', font: "'Playfair Display', serif", effect: 'deco' }
+    },
+    {
+        id: 'soviet-constructivism',
+        name: 'Soviet Constructivism',
+        family: 'Art & History',
+        mood: 'агитплакат',
+        contrast: 'очень высокий',
+        description: 'Диагонали, рубленые формы и агрессивный красно-черный контраст.',
+        tokens: { ...base, bg: '#F5EBDD', bgGradient: 'linear-gradient(180deg,#F5EBDD 0%,#E7D8C2 100%)', surface: '#FAF1E4', text: '#121212', accent: '#C1121F', accentAlt: '#000000', borderColor: '#000000', chip: 'rgba(193,18,31,0.2)', buttonText: '#FFFFFF', radius: '0px', borderWidth: '3px', font: "'Manrope', sans-serif", effect: 'construct' }
+    },
+    {
+        id: 'infrared',
+        name: 'Infrared',
+        family: 'Experimental',
+        mood: 'тепловизор',
+        contrast: 'высокий',
+        description: 'Тепловые пятна от синего к красному и жёлтому без жёстких контуров.',
+        tokens: { ...base, bg: '#16052F', bgGradient: 'linear-gradient(120deg,#16052F 0%,#1D4ED8 25%,#E11D48 60%,#FDE047 100%)', surface: 'rgba(0,0,0,0.25)', text: '#FFF8E2', accent: '#FDE047', accentAlt: '#E11D48', borderColor: '#FDE047', chip: 'rgba(253,224,71,0.22)', buttonText: '#2B1000', effect: 'infrared', surfaceOverlay: 'blur(3px)' }
+    },
+    {
+        id: 'negative-space',
+        name: 'Negative Space',
+        family: 'Experimental',
+        mood: 'оптическая инверсия',
+        contrast: 'очень высокий',
+        description: 'Черный фон и белый контент с инверсией внутри внутренних блоков.',
+        tokens: { ...base, bg: '#0A0A0A', bgGradient: 'none', surface: '#FFFFFF', text: '#FFFFFF', accent: '#FFFFFF', accentAlt: '#000000', borderColor: '#FFFFFF', chip: 'rgba(255,255,255,0.2)', buttonText: '#000000', effect: 'negative', shadow: 'none' }
+    },
+    {
+        id: 'ascii-art',
+        name: 'ASCII Art',
+        family: 'Experimental',
+        mood: 'терминальная графика',
+        contrast: 'высокий',
+        description: 'Интерфейс из символов и моноширинной ритмики.',
+        tokens: { ...base, bg: '#101010', bgGradient: 'none', surface: '#181818', text: '#E7E7E7', accent: '#9AE66E', accentAlt: '#4F7D3A', borderColor: '#9AE66E', chip: 'rgba(154,230,110,0.2)', buttonText: '#10220B', font: "'Fira Code', monospace", effect: 'ascii' }
+    },
+    {
+        id: 'origami',
+        name: 'Origami',
+        family: 'Experimental',
+        mood: 'бумажная пластика',
+        contrast: 'средний',
+        description: 'Складки, острые углы и теневые плоскости бумажных модулей.',
+        tokens: { ...base, bg: '#F4F6F8', bgGradient: 'linear-gradient(180deg,#F4F6F8 0%,#E8EDF2 100%)', surface: '#FFFFFF', text: '#1F2933', accent: '#5D7FA3', accentAlt: '#BBC7D6', borderColor: '#5D7FA3', chip: 'rgba(93,127,163,0.17)', buttonText: '#F8FCFF', radius: '4px', effect: 'origami' }
+    },
+    {
+        id: 'underwater-abyss',
+        name: 'Underwater Abyss',
+        family: 'Experimental',
+        mood: 'темная глубина',
+        contrast: 'низкий',
+        description: 'Почти черная бездна, где элементы проявляются при наведении.',
+        tokens: { ...base, bg: '#020A14', bgGradient: 'radial-gradient(circle at center,#062143 0%,#020A14 70%)', surface: 'rgba(8,24,46,0.52)', text: '#BEE6FF', accent: '#5FC5FF', accentAlt: '#10395D', borderColor: '#245C84', chip: 'rgba(95,197,255,0.15)', buttonText: '#042744', effect: 'abyss', surfaceOverlay: 'blur(8px)' }
+    },
+    {
+        id: 'neural-link',
+        name: 'Neural Link',
+        family: 'Future UI',
+        mood: 'биотех',
+        contrast: 'средний',
+        description: 'Нейронные линии, мягкая пульсация и серо-розовый биотех.',
+        tokens: { ...base, bg: '#E3E5E8', bgGradient: 'linear-gradient(180deg,#E3E5E8 0%,#D5D8DE 100%)', surface: '#F3F4F6', text: '#33343B', accent: '#E75D8C', accentAlt: '#8B93A5', borderColor: '#8B93A5', chip: 'rgba(231,93,140,0.18)', buttonText: '#FFF3F8', effect: 'neural' }
+    },
+    {
+        id: 'star-trek-lcars',
+        name: 'Star Trek LCARS',
+        family: 'Future UI',
+        mood: 'олдскульный sci-fi',
+        contrast: 'высокий',
+        description: 'Яркие модульные блоки LCARS с характерными скруглениями.',
+        tokens: { ...base, bg: '#0D0D1F', bgGradient: 'none', surface: '#13132B', text: '#F4E8D2', accent: '#F6A04D', accentAlt: '#8E6CC7', borderColor: '#F6A04D', chip: 'rgba(142,108,199,0.24)', buttonText: '#2B1400', radius: '28px', shadow: 'none', effect: 'lcars' }
+    },
+    {
+        id: 'hologram-blue',
+        name: 'Hologram Blue',
+        family: 'Future UI',
+        mood: 'цифровой фантом',
+        contrast: 'средний',
+        description: 'Полупрозрачный голубой интерфейс со строчным мерцанием.',
+        tokens: { ...base, bg: '#06192E', bgGradient: 'linear-gradient(180deg,#06192E 0%,#0B3C6F 100%)', surface: 'rgba(118,198,255,0.14)', text: '#DDF4FF', accent: '#7CD7FF', accentAlt: '#2B83B8', borderColor: '#7CD7FF', chip: 'rgba(124,215,255,0.18)', buttonText: '#00263E', effect: 'hologram', surfaceOverlay: 'blur(4px)' }
+    },
+    {
+        id: 'nanotech',
+        name: 'Nanotech',
+        family: 'Future UI',
+        mood: 'жидкая тьма',
+        contrast: 'средний',
+        description: 'Глянцевый черный с текучими ртутными переходами состояний.',
+        tokens: { ...base, bg: '#050505', bgGradient: 'linear-gradient(140deg,#050505 0%,#131313 50%,#080808 100%)', surface: '#121212', text: '#D8D8D8', accent: '#7A7A7A', accentAlt: '#2B2B2B', borderColor: '#3C3C3C', chip: 'rgba(122,122,122,0.18)', buttonText: '#F0F0F0', radius: '22px', effect: 'nanotech' }
+    },
+    {
+        id: 'white-room',
+        name: 'White Room',
+        family: 'Future UI',
+        mood: 'стерильная матрица',
+        contrast: 'низкий',
+        description: 'Абсолютно белая среда с тонкими серыми контурами и dissolve-появлением.',
+        tokens: { ...base, bg: '#FFFFFF', bgGradient: 'none', surface: '#FFFFFF', text: '#80858E', accent: '#A2A7AF', accentAlt: '#D0D3D8', borderColor: '#D0D3D8', chip: 'rgba(162,167,175,0.2)', buttonText: '#5A5F67', shadow: '0 8px 20px rgba(140,145,153,0.18)', effect: 'whiteroom' }
+    },
+    {
+        id: 'old-newspaper',
+        name: 'Old Newspaper',
+        family: 'Mix',
+        mood: 'историческая типографика',
+        contrast: 'средний',
+        description: 'Желтая бумага, колонная верстка и гравюрный характер.',
+        tokens: { ...base, bg: '#EEDFB8', bgGradient: 'linear-gradient(180deg,#EEDFB8 0%,#DEC990 100%)', surface: '#F5E9C8', text: '#2D2418', accent: '#4B3A27', accentAlt: '#8A6D45', borderColor: '#4B3A27', chip: 'rgba(75,58,39,0.16)', buttonText: '#FFF8EA', font: "'Playfair Display', serif", effect: 'newspaper' }
+    },
+    {
+        id: 'chalkboard',
+        name: 'Chalkboard',
+        family: 'Mix',
+        mood: 'школьная доска',
+        contrast: 'средний',
+        description: 'Темный шифер с меловыми линиями и потертостями.',
+        tokens: { ...base, bg: '#13291F', bgGradient: 'linear-gradient(180deg,#13291F 0%,#0E1F18 100%)', surface: '#1D3A2D', text: '#F3F7F2', accent: '#E8F0E6', accentAlt: '#8FC0A9', borderColor: '#8FC0A9', chip: 'rgba(232,240,230,0.2)', buttonText: '#0F2018', font: "'Courier Prime', monospace", effect: 'chalk' }
+    },
+    {
+        id: 'lego-brick',
+        name: 'Lego Brick',
+        family: 'Mix',
+        mood: 'игровой конструктор',
+        contrast: 'высокий',
+        description: 'Яркие чистые цвета, блочная геометрия и характерные пупырышки.',
+        tokens: { ...base, bg: '#F7F7F7', bgGradient: 'none', surface: '#FFFFFF', text: '#1A1A1A', accent: '#E63946', accentAlt: '#1D4ED8', borderColor: '#F5C400', chip: 'rgba(29,78,216,0.16)', buttonText: '#FFFFFF', radius: '12px', borderWidth: '3px', effect: 'lego' }
+    },
+    {
+        id: 'luxury-yacht',
+        name: 'Luxury Yacht',
+        family: 'Mix',
+        mood: 'тик и сталь',
+        contrast: 'средний',
+        description: 'Темное дерево, металлические акценты и палубные горизонтали.',
+        tokens: { ...base, bg: '#1F1712', bgGradient: 'linear-gradient(180deg,#1F1712 0%,#2C211A 100%)', surface: '#3B2B21', text: '#E8DED3', accent: '#BFC7D1', accentAlt: '#8B5E3C', borderColor: '#BFC7D1', chip: 'rgba(191,199,209,0.2)', buttonText: '#1C130D', font: "'Playfair Display', serif", effect: 'yacht' }
+    },
+    {
+        id: 'post-apocalyptic',
+        name: 'Post-Apocalyptic',
+        family: 'Mix',
+        mood: 'rust & dirt',
+        contrast: 'высокий',
+        description: 'Ржавчина, пыль и поврежденные поверхности с цифровыми артефактами.',
+        tokens: { ...base, bg: '#2A1F1A', bgGradient: 'linear-gradient(180deg,#2A1F1A 0%,#1A1411 100%)', surface: '#3B2C25', text: '#E2D2BE', accent: '#A34E2C', accentAlt: '#6B3C2A', borderColor: '#A34E2C', chip: 'rgba(163,78,44,0.2)', buttonText: '#F6E8D9', effect: 'wasteland' }
+    },
+
 ];
 
 export const defaultThemeId = 'atomic-heart-retro';

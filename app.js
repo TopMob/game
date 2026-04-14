@@ -19,8 +19,8 @@ const themeMap = new Map(themeList.map((theme) => [theme.id, theme]));
 const preferred = localStorage.getItem('selectedTheme');
 const initialId = themeMap.has(preferred) ? preferred : defaultThemeId;
 
-if (themeList.length !== 30) {
-    throw new Error(`Ожидается 30 тем, найдено: ${themeList.length}`);
+if (themeList.length !== 60) {
+    throw new Error(`Ожидается 60 тем, найдено: ${themeList.length}`);
 }
 
 function buildSelectOptions() {
