@@ -122,6 +122,23 @@ select,
     transition: var(--ui-transition);
 }
 
+
+.meta-row {
+    margin-bottom: 0.6rem;
+}
+
+#themeCounter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: 999px;
+    padding: 0.24rem 0.7rem;
+    background: var(--chip-bg);
+    color: var(--accent-color);
+    font-size: 0.82rem;
+}
+
 #themeTitle {
     color: var(--accent-color);
     margin-bottom: 0.7rem;
@@ -272,7 +289,24 @@ select,
     background-size: cover, 26px 26px, 26px 26px;
 }
 
-[data-effect='glitch'] #themeTitle {
+[data-effect='glitch']
+.meta-row {
+    margin-bottom: 0.6rem;
+}
+
+#themeCounter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: 999px;
+    padding: 0.24rem 0.7rem;
+    background: var(--chip-bg);
+    color: var(--accent-color);
+    font-size: 0.82rem;
+}
+
+#themeTitle {
     text-shadow: 1px 0 var(--accent-color), -1px 0 var(--accent-alt);
 }
 

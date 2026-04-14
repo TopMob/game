@@ -6,19 +6,26 @@ const randomThemeButton = document.getElementById('randomTheme');
 const titleNode = document.getElementById('themeTitle');
 const descriptionNode = document.getElementById('themeDescription');
 const tagsNode = document.getElementById('themeTags');
+const counterNode = document.getElementById('themeCounter');
 
 const themeList = normalizeThemeList(themes);
 const themeMap = new Map(themeList.map((theme) => [theme.id, theme]));
 const preferred = localStorage.getItem('selectedTheme');
 const initialId = themeMap.has(preferred) ? preferred : defaultThemeId;
 
+if (themeList.length !== 30) {
+    throw new Error(`Ожидается 30 тем, найдено: ${themeList.length}`);
+}
+
 function buildSelectOptions() {
     themeSelect.innerHTML = themeList
-        .map((theme) => `<option value="${theme.id}">${theme.name}</option>`)
+        .map((theme, index) => `<option value="${theme.id}">${index + 1}. ${theme.name}</option>`)
         .join('');
 }
 
 function renderThemeMeta(theme) {
+    const index = themeList.findIndex((entry) => entry.id === theme.id);
+    counterNode.textContent = `Тема ${index + 1} из ${themeList.length}`;
     titleNode.textContent = theme.name;
     descriptionNode.textContent = theme.description;
     tagsNode.innerHTML = `
