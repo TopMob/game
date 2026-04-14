@@ -15,7 +15,7 @@ export function createSavedPage({ posts }) {
     const card = createPosterCard({
       title: post.title,
       subtitle: post.tags,
-      ratio: post.ratio
+      ratio: 'saved'
     });
     grid.append(card);
   });

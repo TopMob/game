@@ -1,4 +1,4 @@
-export function createPosterCard({ title, subtitle, ratio = 'square', onClick }) {
+export function createPosterCard({ title, subtitle = '', ratio = 'square', onClick }) {
   const button = document.createElement('button');
   button.type = 'button';
   button.className = `poster-card poster-card--${ratio}`;
@@ -13,11 +13,15 @@ export function createPosterCard({ title, subtitle, ratio = 'square', onClick })
   name.className = 'poster-card__title';
   name.textContent = title;
 
-  const text = document.createElement('span');
-  text.className = 'poster-card__subtitle';
-  text.textContent = subtitle;
+  meta.append(name);
 
-  meta.append(name, text);
+  if (subtitle) {
+    const text = document.createElement('span');
+    text.className = 'poster-card__subtitle';
+    text.textContent = subtitle;
+    meta.append(text);
+  }
+
   button.append(poster, meta);
 
   if (onClick) {

@@ -125,27 +125,8 @@
   aspect-ratio: 1 / 1;
 }
 
-.jump-board {
-  display: grid;
-  gap: 12px;
-}
-
-.jump-panel {
-  padding: 14px;
-  border: 1px solid rgba(146, 173, 222, 0.35);
-  background: rgba(12, 19, 29, 0.86);
-}
-
-.jump-panel__title {
-  font-family: var(--font-display);
-  color: var(--accent);
-  margin-bottom: 6px;
-  font-size: 1rem;
-}
-
-.jump-panel__text {
-  color: var(--text-muted);
-  font-size: 0.92rem;
+.poster-card--saved .poster-card__art {
+  aspect-ratio: 4 / 5;
 }
 
 .history {
@@ -180,14 +161,9 @@
 }
 
 .poster-grid {
-  columns: 3 220px;
-  column-gap: 14px;
-}
-
-.poster-grid .poster-card {
-  width: 100%;
-  margin: 0 0 14px;
-  break-inside: avoid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
 }
 
 .settings-list {
