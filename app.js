@@ -1,41 +1,55 @@
 import { themes, defaultThemeId } from './themes.js';
+import { applyTheme, normalizeThemeList } from './theme-engine.js';
 
 const themeSelect = document.getElementById('themeSelect');
+const randomThemeButton = document.getElementById('randomTheme');
 const titleNode = document.getElementById('themeTitle');
 const descriptionNode = document.getElementById('themeDescription');
 const tagsNode = document.getElementById('themeTags');
 
-const themeMap = new Map(themes.map((theme) => [theme.id, theme]));
-const savedTheme = localStorage.getItem('selectedTheme');
-const initialTheme = themeMap.has(savedTheme) ? savedTheme : defaultThemeId;
+const themeList = normalizeThemeList(themes);
+const themeMap = new Map(themeList.map((theme) => [theme.id, theme]));
+const preferred = localStorage.getItem('selectedTheme');
+const initialId = themeMap.has(preferred) ? preferred : defaultThemeId;
 
-function renderOptions() {
-    const options = themes
+function buildSelectOptions() {
+    themeSelect.innerHTML = themeList
         .map((theme) => `<option value="${theme.id}">${theme.name}</option>`)
         .join('');
-    themeSelect.innerHTML = options;
 }
 
-function renderThemeDetails(themeId) {
-    const theme = themeMap.get(themeId) || themeMap.get(defaultThemeId);
-    titleNode.textContent = `Демонстрация: ${theme.name}`;
-    descriptionNode.textContent = theme.note;
+function renderThemeMeta(theme) {
+    titleNode.textContent = theme.name;
+    descriptionNode.textContent = theme.description;
     tagsNode.innerHTML = `
+        <span class="chip">Семейство: ${theme.family}</span>
         <span class="chip">Настроение: ${theme.mood}</span>
         <span class="chip">Контраст: ${theme.contrast}</span>
     `;
 }
 
-function applyTheme(themeId) {
-    document.documentElement.setAttribute('data-theme', themeId);
-    themeSelect.value = themeId;
-    localStorage.setItem('selectedTheme', themeId);
-    renderThemeDetails(themeId);
+function activateTheme(themeId) {
+    const theme = themeMap.get(themeId) || themeMap.get(defaultThemeId);
+    applyTheme(theme);
+    themeSelect.value = theme.id;
+    localStorage.setItem('selectedTheme', theme.id);
+    renderThemeMeta(theme);
 }
 
-renderOptions();
-applyTheme(initialTheme);
+function pickRandomTheme(currentId) {
+    const pool = themeList.filter((theme) => theme.id !== currentId);
+    const index = Math.floor(Math.random() * pool.length);
+    return pool[index]?.id || currentId;
+}
+
+buildSelectOptions();
+activateTheme(initialId);
 
 themeSelect.addEventListener('change', (event) => {
-    applyTheme(event.target.value);
+    activateTheme(event.target.value);
+});
+
+randomThemeButton.addEventListener('click', () => {
+    const randomId = pickRandomTheme(themeSelect.value);
+    activateTheme(randomId);
 });

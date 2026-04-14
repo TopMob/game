@@ -1,37 +1,43 @@
 # Каталог тем
 
-Ниже собраны все доступные стили для демонстрации. Они специально сделаны максимально разными: яркими, тусклыми, спокойными, агрессивными, минималистичными и экспериментальными.
+Ниже полный набор из 30 тем для демонстрации и выбора.
 
-## Список тем
+| № | ID | Название | Семейство | Ключевая идея |
+|---|---|---|---|---|
+| 1 | `atomic-heart-retro` | Atomic Heart Retro | Советский футуризм | Утопический индустриализм 50-х, бумага + металл + кумач. |
+| 2 | `cyberpunk-neon` | Cyberpunk Neon | Night City | Агрессивный неон и высокий контраст. |
+| 3 | `aurora-glass` | Aurora Glass | Glassmorphism | Матовое стекло и мягкая глубина. |
+| 4 | `vaporwave-80s` | Vaporwave 80s | Retro-Digital | Пиксельный ретро-интернет и кислотные градиенты. |
+| 5 | `forest-fog` | Forest Fog | Organic Matte | Спокойные природные матовые оттенки. |
+| 6 | `sunset-miami` | Sunset Miami | Synthwave | Закатные линии и ночной неон. |
+| 7 | `midnight-terminal` | Midnight Terminal | Hacker Style | CRT-терминал и матричный зелёный. |
+| 8 | `paper-ink` | Paper & Ink | Editorial | Чистая полиграфика и типографика. |
+| 9 | `luxury-gold` | Luxury Gold | Premium Dark | Тёмная роскошь с золотом. |
+| 10 | `ice-minimal` | Ice Minimal | Arctic Tech | Стерильный холодный минимализм. |
+| 11 | `toxic-lime` | Toxic Lime | Hardcore Gaming | Warning-эстетика и токсичный лайм. |
+| 12 | `deep-ocean` | Deep Ocean | Aquatic Calm | Морская глубина и плавные формы. |
+| 13 | `neumorphism-soft-ui` | Neumorphism | Soft UI | Объём через светлую и тёмную тени. |
+| 14 | `brutalism-raw-web` | Brutalism | Raw Web | Грубые рамки, ноль сглаживания. |
+| 15 | `swiss-design` | Swiss Design | Bauhaus | Строгая сетка и первичные акценты. |
+| 16 | `claymorphism-friendly-ui` | Claymorphism | Friendly UI | Мягкие «глиняные» формы. |
+| 17 | `solarpunk-eco-future` | Solarpunk | Eco-Future | Органика, зелень и солнечная энергия. |
+| 18 | `steampunk-victorian-tech` | Steampunk | Victorian Tech | Медь, латунь и механика. |
+| 19 | `manga-sketch` | Manga Sketch | Halftone | Черно-белая комиксная страница. |
+| 20 | `blueprint-engineer-draft` | Blueprint | Engineer Draft | Синька и сетка чертежа. |
+| 21 | `glitch-core` | Glitch Core | Digital Chaos | RGB-сдвиг и эффект помех. |
+| 22 | `nordic-noir` | Nordic Noir | Scandinavian Dark | Холодная минималистичная меланхолия. |
+| 23 | `pop-art` | Pop Art | Lichtenstein | Яркий CMYK и жирные контуры. |
+| 24 | `medieval-parchment` | Medieval Parchment | RPG UI | Пергамент и готический настрой. |
+| 25 | `space-hud` | Space HUD | Sci-Fi Interface | Кокпитный интерфейс со скан-акцентами. |
+| 26 | `web-90s` | 90s Web | Geocities | Outset-кнопки и ностальгия браузеров 90-х. |
+| 27 | `liquid-organic` | Liquid Organic | Fluid | Жидкие формы и водные градиенты. |
+| 28 | `dark-academia` | Dark Academia | Тайная библиотека | Мрачная классика университетских архивов. |
+| 29 | `holographic-iridescence` | Holographic Iridescence | Жемчужный софт-тек | Радужные переливы и перламутр. |
+| 30 | `raygun-gothic` | Raygun Gothic | Ретро-футуризм 60-х | Хром и атомные формы старого будущего. |
 
-1. **Atomic Heart Retro**  
-   Винтажная индустриальная тема с тёплой бумагой, жёсткими рамками и ретро-ощущением.
-2. **Cyberpunk Neon**  
-   Тёмный фон + кислотные неоновые акценты для высококонтрастного sci-fi интерфейса.
-3. **Aurora Glass**  
-   Полупрозрачные элементы, размытие и мягкие холодные оттенки.
-4. **Vaporwave 80s**  
-   Радикально яркий градиент с пиксельной эстетикой и ностальгией по 80-м.
-5. **Forest Fog**  
-   Тусклый природный стиль с приглушённой контрастностью.
-6. **Sunset Miami**  
-   Насыщенный закатный градиент в духе летнего неона и клубной атмосферы.
-7. **Midnight Terminal**  
-   Моноширинный «терминальный» стиль на тёмно-зелёной палитре.
-8. **Paper & Ink**  
-   Спокойная светлая тема, удобная для чтения и демонстрации контента.
-9. **Luxury Gold**  
-   Премиальная тёмная тема с золотыми акцентами.
-10. **Ice Minimal**  
-    Холодная минималистичная тема с мягкими голубыми оттенками.
-11. **Toxic Lime**  
-    Агрессивный контраст чёрного и неон-лайма для экстремального вида.
-12. **Deep Ocean**  
-    Глубокая морская тема с мягким свечением и спокойным балансом.
+## Как расширять систему
 
-## Как выбирать тему
-
-- Если нужен **максимально яркий стиль**, попробуй: `Cyberpunk Neon`, `Vaporwave 80s`, `Sunset Miami`, `Toxic Lime`.
-- Если нужен **спокойный/тусклый стиль**, попробуй: `Forest Fog`, `Paper & Ink`, `Ice Minimal`, `Deep Ocean`.
-- Если нужен **премиальный и выразительный** вариант: `Luxury Gold`.
-- Если нужен **универсальный современный UI**: `Aurora Glass`.
+1. Добавь новый объект в `themes.js` в массив `themes`.
+2. Определи обязательные поля: `id`, `name`, `family`, `mood`, `contrast`, `description`, `tokens`.
+3. Если нужен особый визуальный эффект, укажи `tokens.effect` и добавь правило в `style.css` по селектору `[data-effect='...']`.
+4. Тема автоматически появится в списке выбора и в карточке метаданных, без правок в `index.html`.

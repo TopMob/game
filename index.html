@@ -7,21 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="layout-row">
         <h1>Дизайн-стенд</h1>
-        <div class="theme-switcher">
+        <div class="controls">
             <label for="themeSelect">Тема</label>
             <select id="themeSelect"></select>
+            <button id="randomTheme" class="secondary-btn" type="button">Случайная</button>
         </div>
     </header>
-    <main>
+
+    <main class="layout-grid">
         <article class="card">
-            <h2 id="themeTitle">Демонстрация стиля</h2>
-            <p id="themeDescription">Этот интерактивный блок показывает, как глобально меняются цвета, шрифты, тени и формы элементов интерфейса. Выберите другой стиль в меню сверху, чтобы увидеть трансформацию.</p>
+            <h2 id="themeTitle"></h2>
+            <p id="themeDescription"></p>
             <div class="chips" id="themeTags"></div>
-            <button class="action-btn">Подтвердить</button>
+            <button class="action-btn" type="button">Подтвердить</button>
         </article>
+        <section class="panel">
+            <h3>Превью элементов</h3>
+            <p>Ниже блоки для быстрой проверки контраста, форм и акцентных цветов.</p>
+            <div class="sample-row">
+                <a class="sample-link" href="#">Ссылка интерфейса</a>
+                <input class="sample-input" type="text" placeholder="Поле ввода">
+            </div>
+            <div class="progress-wrap">
+                <span>Прогресс</span>
+                <div class="progress-bar"><i></i></div>
+            </div>
+        </section>
     </main>
+
     <script type="module" src="app.js"></script>
 </body>
 </html>
