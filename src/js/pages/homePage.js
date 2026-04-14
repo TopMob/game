@@ -1,6 +1,6 @@
 import { createPosterCard } from '../components/posterCard.js';
 
-export function createHomePage({ history, collections }) {
+export function createHomePage({ history, collections, todayPicks }) {
   const section = document.createElement('section');
   section.className = 'page';
 
@@ -12,18 +12,28 @@ export function createHomePage({ history, collections }) {
   const filterRow = document.createElement('div');
   filterRow.className = 'filter-row';
 
-  const historyAnchor = document.createElement('div');
-  historyAnchor.id = 'history-anchor';
-
   collections.forEach((item) => {
     const card = createPosterCard({
       title: item.title,
-      ratio: 'tall',
-      onClick: () => {
-        historyAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      ratio: 'tall'
     });
     filterRow.append(card);
+  });
+
+  const picksBox = document.createElement('div');
+  picksBox.className = 'page-box card-list';
+
+  const picksTitle = document.createElement('h2');
+  picksTitle.className = 'history__title';
+  picksTitle.textContent = 'Today picks';
+
+  picksBox.append(picksTitle);
+
+  todayPicks.forEach((pick) => {
+    const item = document.createElement('div');
+    item.className = 'card';
+    item.textContent = pick;
+    picksBox.append(item);
   });
 
   const historyBox = document.createElement('div');
@@ -42,6 +52,6 @@ export function createHomePage({ history, collections }) {
     historyBox.append(entry);
   });
 
-  section.append(heroButton, filterRow, historyAnchor, historyBox);
+  section.append(heroButton, filterRow, picksBox, historyBox);
   return section;
 }

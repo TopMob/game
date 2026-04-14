@@ -1,19 +1,20 @@
 import { pages } from './state.js';
 import { createHomePage } from './pages/homePage.js';
-import { createSimplePage } from './pages/simplePage.js';
 import { createSavedPage } from './pages/savedPage.js';
 import { createSettingsPage } from './pages/settingsPage.js';
+import { createAccountPage } from './pages/accountPage.js';
 
 export function renderPage(state) {
   if (state.page === pages.home) {
-    return createHomePage({ history: state.history, collections: state.homeCollections });
+    return createHomePage({
+      history: state.history,
+      collections: state.homeCollections,
+      todayPicks: state.todayPicks
+    });
   }
 
   if (state.page === pages.account) {
-    return createSimplePage({
-      title: 'Аккаунт',
-      lines: ['Профиль пользователя', 'Недавние действия', 'Подписки и избранное']
-    });
+    return createAccountPage({ account: state.account });
   }
 
   if (state.page === pages.saved) {
