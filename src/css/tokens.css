@@ -1,0 +1,24 @@
+:root {
+  --font-display: 'Russo One', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --bg-main: radial-gradient(circle at 18% 20%, #233b58 0%, #111825 52%, #0a0f16 100%);
+  --bg-surface: rgba(17, 27, 40, 0.92);
+  --bg-surface-strong: rgba(11, 19, 28, 0.95);
+  --text-main: #f5f8ff;
+  --text-muted: #98aac8;
+  --accent: #44f5e8;
+  --accent-strong: #d463ff;
+  --accent-warm: #ffd27d;
+  --border: rgba(117, 145, 192, 0.45);
+  --border-strong: rgba(184, 120, 255, 0.58);
+  --shadow-soft: 0 16px 32px rgba(8, 14, 23, 0.32);
+  --shadow-strong: 0 20px 44px rgba(173, 85, 250, 0.24);
+  --radius-soft: 18px;
+  --radius-strong: 26px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background: var(--bg-main);
+}

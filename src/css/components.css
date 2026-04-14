@@ -1,0 +1,109 @@
+.btn {
+  border: 1px solid var(--border);
+  background: linear-gradient(140deg, rgba(28, 40, 58, 0.97), rgba(16, 24, 37, 0.97));
+  color: var(--text-main);
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--menu {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-strong);
+}
+
+.btn--menu::before {
+  content: '≡';
+  font-size: 24px;
+}
+
+.btn--home {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: radial-gradient(circle at 30% 30%, #95fff8 0%, #34c3d7 34%, #1f2a43 100%);
+  box-shadow: 0 0 0 3px rgba(68, 245, 232, 0.18), 0 8px 16px rgba(2, 8, 16, 0.45);
+}
+
+.btn--sidebar {
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+}
+
+.btn--sidebar.active {
+  border-color: var(--accent);
+  background: linear-gradient(140deg, rgba(29, 52, 72, 0.97), rgba(18, 27, 41, 0.97));
+}
+
+.hero-action {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  border-radius: 14px;
+  min-height: 64px;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.9rem);
+  letter-spacing: 1px;
+  background: linear-gradient(100deg, rgba(212, 99, 255, 0.22), rgba(68, 245, 232, 0.18), rgba(255, 210, 125, 0.22));
+  border: 1px solid var(--border-strong);
+}
+
+.filter-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn--filter {
+  min-width: 110px;
+  border-radius: 8px;
+  padding: 10px 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.history {
+  display: grid;
+  gap: 12px;
+}
+
+.history__title {
+  font-family: var(--font-display);
+  color: var(--accent-warm);
+  letter-spacing: 0.8px;
+}
+
+.history__entry {
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(11, 17, 28, 0.9);
+  border: 1px solid rgba(126, 154, 199, 0.3);
+  color: var(--text-muted);
+}
+
+.card-list {
+  display: grid;
+  gap: 12px;
+}
+
+.card {
+  padding: 14px;
+  border: 1px solid var(--border);
+  background: rgba(10, 16, 24, 0.8);
+  border-radius: 8px;
+}
