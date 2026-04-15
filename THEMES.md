@@ -1,76 +1,145 @@
-# Каталог тем
+# Документация по темам
 
-Полный каталог включает 60 тем для UI Laboratory.
+Всего тем: **60**.
 
-## 1–30: Базовый набор
+## Как устроен код тем
 
-1. Atomic Heart Retro
-2. Cyberpunk Neon
-3. Aurora Glass
-4. Vaporwave 80s
-5. Forest Fog
-6. Sunset Miami
-7. Midnight Terminal
-8. Paper & Ink
-9. Luxury Gold
-10. Ice Minimal
-11. Toxic Lime
-12. Deep Ocean
-13. Neumorphism
-14. Brutalism
-15. Swiss Design
-16. Claymorphism
-17. Solarpunk
-18. Steampunk
-19. Manga Sketch
-20. Blueprint
-21. Glitch Core
-22. Nordic Noir
-23. Pop Art
-24. Medieval Parchment
-25. Space HUD
-26. 90s Web
-27. Liquid Organic
-28. Dark Academia
-29. Holographic Iridescence
-30. Raygun Gothic
+- Источник тем: `themes` в `themes.js`.
+- Группировка по семействам: `themesByFamily`.
+- Короткая документационная модель: `themeDocs` (описание, ключевые цвета, скругление, рамки, эффект).
 
-## 31–60: Дополнительный набор
+## Авторские изюминки
 
-31. Frozen Carbon
-32. Polished Marble
-33. Liquid Mercury
-34. Recycled Plastic
-35. Velvet Night
-36. Slasher 80s
-37. Fallout Pip-Boy
-38. Dune Arrakis
-39. Biohazard
-40. Tron Legacy
-41. Blueprint Cyanotype
-42. Bauhaus Original
-43. Ukiyo-e
-44. Art Deco
-45. Soviet Constructivism
-46. Infrared
-47. Negative Space
-48. ASCII Art
-49. Origami
-50. Underwater Abyss
-51. Neural Link
-52. Star Trek LCARS
-53. Hologram Blue
-54. Nanotech
-55. White Room
-56. Old Newspaper
-57. Chalkboard
-58. Lego Brick
-59. Luxury Yacht
-60. Post-Apocalyptic
+- Для **всех тем** работает динамическая `signature`-система: у каждой темы автоматически вычисляются угол/зерно/интенсивность паттернов по `id` и `contrast`, поэтому каждая тема получает индивидуальный «почерк» даже без ручного CSS для каждой из 60 тем.
+- `Atomic Heart Retro` использует отдельный эффект `atomic-retro`: плакатные диагонали, звезда в заголовке, штрих-паттерн на карточках и характерные скошенные кнопки в духе ретрофутуризма.
+- Все фирменные эффекты описываются через `tokens.effect` и стили `[data-effect="..."]` в `style.css`.
 
-## Как расширять систему
+## Легенда токенов
 
-1. Добавляй новый объект в `themes.js` в массив `themes`.
-2. Используй обязательные поля: `id`, `name`, `family`, `mood`, `contrast`, `description`, `tokens`.
-3. Для специальных визуальных режимов указывай `tokens.effect` и добавляй CSS-правила `[data-effect='...']` в `style.css`.
-4. После добавления тема автоматически появится в селекте и лабораторных блоках.
+| Токен | Что описывает |
+| --- | --- |
+| `bg` | Основной цвет фона приложения |
+| `bgGradient` | Градиент фона (или none) |
+| `surface` | Цвет карточек/поверхностей |
+| `text` | Основной цвет текста |
+| `accent` | Главный акцент и CTA |
+| `accentAlt` | Вторичный акцент |
+| `borderColor` | Базовый цвет границ |
+| `borderWidth` | Толщина границ |
+| `borderStyle` | Стиль границ |
+| `radius` | Базовое скругление компонентов |
+| `shadow` | Тень карточек/контролов |
+| `effect` | Спец-эффект темы (glow, glass, grid и т.д.) |
+
+## Семейства
+
+| Семейство | Кол-во тем |
+| --- | ---: |
+| Жемчужный софт-тек | 1 |
+| Ретро-футуризм 60-х | 1 |
+| Советский футуризм | 1 |
+| Тайная библиотека | 1 |
+| Aquatic Calm | 1 |
+| Arctic Tech | 1 |
+| Art & History | 5 |
+| Bauhaus | 1 |
+| Digital Chaos | 1 |
+| Eco-Future | 1 |
+| Editorial | 1 |
+| Engineer Draft | 1 |
+| Experimental | 5 |
+| Fluid | 1 |
+| Friendly UI | 1 |
+| Future UI | 5 |
+| Geocities | 1 |
+| Glassmorphism | 1 |
+| Hacker Style | 1 |
+| Halftone | 1 |
+| Hardcore Gaming | 1 |
+| Lichtenstein | 1 |
+| Materiality | 5 |
+| Mix | 5 |
+| Night City | 1 |
+| Organic Matte | 1 |
+| Pop-Culture | 5 |
+| Premium Dark | 1 |
+| Raw Web | 1 |
+| Retro-Digital | 1 |
+| RPG UI | 1 |
+| Scandinavian Dark | 1 |
+| Sci-Fi Interface | 1 |
+| Soft UI | 1 |
+| Synthwave | 1 |
+| Victorian Tech | 1 |
+
+## Каталог тем (кратко)
+
+| # | Theme | Семейство | Описание | Цвета (bg/surface/accent/text) | Скругление | Рамка | Эффект |
+| ---: | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Atomic Heart Retro | Советский футуризм | Утопический индустриализм 50-х: металл, дерево и агит-эстетика. (ретро-индустриализм, контраст: средний) | #F4F1EA / #E3DCC8 / #A62A2A / #2B2523 | 18px | 2px solid #2B2523 | atomic-retro |
+| 2 | Cyberpunk Neon | Night City | Неон, острые формы и максимальный контраст ночного мегаполиса. (агрессивный хай-тек, контраст: очень высокий) | #0D0D0D / #1A1A1A / #FCE205 / #E0E0E0 | 0px | 2px solid #FCE205 | glow |
+| 3 | Aurora Glass | Glassmorphism | Полупрозрачное стекло, мягкая глубина и современный premium-вид. (премиальная лёгкость, контраст: средний) | #0F172A / rgba(255,255,255,0.05) / #8B5CF6 / #F8FAFC | 22px | 1px solid rgba(255,255,255,0.24) | glass |
+| 4 | Vaporwave 80s | Retro-Digital | Пиксели, неоновая бирюза и градиенты раннего интернета. (ностальгия и глянец, контраст: высокий) | #FFB6C1 / #8A2BE2 / #FF00FF / #00FFFF | 0px | 2px solid #00FFFF | grid |
+| 5 | Forest Fog | Organic Matte | Матовые натуральные оттенки с широкими отступами и мягкой глубиной. (визуальный отдых, контраст: низкий) | #2D3632 / #3E4A44 / #8DA399 / #C2C9C5 | 18px | 1px solid #5B6B63 | none |
+| 6 | Sunset Miami | Synthwave | Горячий закат, световые полосы и сильные акцентные блики. (вечернее побережье, контраст: высокий) | #240b36 / #c31432 / #ED8F03 / #FFFFFF | 16px | 1px solid rgba(255,255,255,0.25) | sunlines |
+| 7 | Midnight Terminal | Hacker Style | Чёрный фон, матричный зелёный, мерцание и монопространство. (CRT терминал, контраст: высокий) | #050505 / #0A0A0A / #008F11 / #00FF41 | 2px | 1px solid #008F11 | scanline |
+| 8 | Paper & Ink | Editorial | Чистая типографика, без градиентов и без декоративных теней. (дорогая полиграфия, контраст: высокий) | #F9F7F2 / #FFFFFF / #3D5A80 / #1A1A1B | 4px | 1px solid #1A1A1B | none |
+| 9 | Luxury Gold | Premium Dark | Тёмная роскошь, тонкие линии и золотой металлический акцент. (элегантность, контраст: высокий) | #0A0A0A / #161616 / #D4AF37 / #E5E5E5 | 12px | 1px solid #D4AF37 | gold |
+| 10 | Ice Minimal | Arctic Tech | Тонкие линии и холодный светлый спектр будущего интерфейса. (стерильная ясность, контраст: низкий) | #F0F4F8 / #D9E2EC / #62B1F6 / #334E68 | 12px | 0.5px solid #BCCCDC | none |
+| 11 | Toxic Lime | Hardcore Gaming | Warning-эстетика, рейв-контраст и агрессивный лаймовый свет. (экстрим, контраст: очень высокий) | #121212 / #1E1E1E / #CCFF00 / #FFFFFF | 6px | 2px solid #CCFF00 | hazard |
+| 12 | Deep Ocean | Aquatic Calm | Сине-океанические переходы, округлые формы и спокойный ритм. (глубина и баланс, контраст: средний) | #021024 / #052659 / #7DA1C4 / #C1E8FF | 22px | 1px solid #5483B3 | none |
+| 13 | Neumorphism | Soft UI | Одинаковый фон и карточки, объём формируется двойными тенями. (мягкий объём, контраст: низкий) | #E0E5EC / #E0E5EC / #7A8CA8 / #3A4A61 | 20px | 0px solid transparent | neu |
+| 14 | Brutalism | Raw Web | Толстые чёрные рамки, жёлтые плашки и нулевая декоративность. (радикальная честность, контраст: очень высокий) | #FFFFFF / #FFFF00 / #000000 / #000000 | 0px | 4px solid #000000 | brutal |
+| 15 | Swiss Design | Bauhaus | Сетка, асимметрия и первичные акценты красного и синего. (строгая сетка, контраст: высокий) | #FFFFFF / #FFFFFF / #E63946 / #000000 | 0px | 2px solid #000000 | swiss |
+| 16 | Claymorphism | Friendly UI | Глиняные формы с мягкими тенями и сильным скруглением. (мягкая пластика, контраст: средний) | #A2D2FF / #BDE0FE / #FFC8DD / #FFFFFF | 40px | 1px solid rgba(255,255,255,0.4) | clay |
+| 17 | Solarpunk | Eco-Future | Органические формы, солнечные акценты и зелёная энергия. (оптимистичное завтра, контраст: средний) | #F8F7EF / rgba(255,255,255,0.74) / #55A630 / #1F2A1E | 28px | 1px solid rgba(85,166,48,0.42) | blob |
+| 18 | Steampunk | Victorian Tech | Металлические оттенки, бумажная основа и викторианская глубина. (медь и механика, контраст: высокий) | #3E2723 / #5D4037 / #B87333 / #F6E8C7 | 10px | 1px solid #D4AF37 | rivets |
+| 19 | Manga Sketch | Halftone | Полутона и резкие контуры как страница японской манги. (черно-белый комикс, контраст: высокий) | #FFFFFF / #FFFFFF / #000000 / #111111 | 28px | 2px solid #000000 | halftone |
+| 20 | Blueprint | Engineer Draft | Синька, линейная сетка и тонкие белые контуры чертежа. (техническая точность, контраст: высокий) | #0047AB / #0A4FAF / #BFE1FF / #EAF4FF | 8px | 1px solid #EAF4FF | blueprint |
+| 21 | Glitch Core | Digital Chaos | RGB-сдвиг, разрывы и ощущение перегруженного цифрового сигнала. (контролируемый сбой, контраст: очень высокий) | #101015 / #171722 / #00F6FF / #F2F2F5 | 8px | 1px solid #2C2C44 | glitch |
+| 22 | Nordic Noir | Scandinavian Dark | Острые углы, тонкие шрифты, воздух и глубокий винный акцент. (холодная меланхолия, контраст: высокий) | #121212 / #1A1A1A / #641212 / #E5E5E5 | 0px | 1px solid #2E2E2E | none |
+| 23 | Pop Art | Lichtenstein | Яркие заливки, жирные линии и динамика постеров 60-х. (взрывной CMYK, контраст: очень высокий) | #00B7FF / #FFFFFF / #FF00A8 / #000000 | 0px | 4px solid #000000 | dots |
+| 24 | Medieval Parchment | RPG UI | Пергамент, готическая атмосфера и печати в стиле старых хроник. (древний манускрипт, контраст: средний) | #704214 / #F5F5DC / #8B0000 / #3B2A1A | 14px | 1px solid #3B2A1A | parchment |
+| 25 | Space HUD | Sci-Fi Interface | Тонкие рамки, скан-линии и светящиеся технические маркеры. (кокпит пилота, контраст: высокий) | #0B1221 / #111C34 / #FF8C00 / #D7ECFF | 6px | 1px solid #2C4E79 | hud |
+| 26 | 90s Web | Geocities | Outset-рамки, классические кнопки и ностальгия браузеров 1998. (ранний интернет, контраст: средний) | #C0C0C0 / #D9D9D9 / #0000EE / #000000 | 2px | 2px outset #808080 | classic |
+| 27 | Liquid Organic | Fluid | Плавающие градиенты и жидкие формы без жёстких углов. (капли и течение, контраст: средний) | #4FACFE / rgba(255,255,255,0.22) / #0066FF / #05273F | 36px | 1px solid rgba(255,255,255,0.45) | liquid |
+| 28 | Dark Academia | Тайная библиотека | Старое дерево, двойные рамки и типографика классических изданий. (интеллектуальная готика, контраст: средний) | #1C1917 / #292524 / #78350F / #D6D3D1 | 8px | 3px solid #44403C | double-border |
+| 29 | Holographic Iridescence | Жемчужный софт-тек | Перламутровые поверхности и переливающиеся акцентные градиенты. (радужный футуризм, контраст: средний) | #F8FAFC / rgba(255,255,255,0.8) / #EE82EE / #1E293B | 16px | 1px solid rgba(199,210,254,0.8) | holo |
+| 30 | Raygun Gothic | Ретро-футуризм 60-х | Хром, коралл и формы эпохи «будущего из прошлого». (атомный оптимизм, контраст: средний) | #2D5A27 / #E2E8F0 / #FB923C / #1A202C | 26px | 1px solid #718096 | raygun |
+| 31 | Frozen Carbon | Materiality | Плетение карбона, объемный пластик и холодный инженерный характер. (технический матовый, контраст: средний) | #121316 / #1C1F24 / #5F6C7B / #E1E4EA | 10px | 1px solid #2E343E | carbon |
+| 32 | Polished Marble | Materiality | Светлый мрамор с прожилками, золотые разделители и тяжелые тени. (античная роскошь, контраст: средний) | #F8F8F6 / #FFFFFF / #B98A3D / #2A2A2A | 12px | 1px solid #B98A3D | marble |
+| 33 | Liquid Mercury | Materiality | Холодный металл, зеркальный блеск и округлые 50% формы. (хромированный футуризм, контраст: высокий) | #9FA5AE / rgba(245,248,252,0.35) / #ECEFF4 / #111318 | 50px | 1px solid #DCE1E8 | mercury |
+| 34 | Recycled Plastic | Materiality | Светлая масса с цветными вкраплениями и зернистой фактурой. (эко-фанк, контраст: средний) | #E6E7E2 / #F2F3EF / #3E9E7A / #25302A | 20px | 1px solid #88948B | plastic |
+| 35 | Velvet Night | Materiality | Бархатный синий, светопоглощающий фон и приглушённый свет. (мягкая тьма, контраст: средний) | #1B1330 / #261B3F / #7D5FB2 / #E9E5F5 | 18px | 1px solid #3B2A63 | velvet |
+| 36 | Slasher 80s | Pop-Culture | Кровавый красный на черном, VHS-помехи и тревожная атмосфера. (vhs horror, контраст: очень высокий) | #090707 / #1A0B0B / #D1001F / #F3D6D6 | 14px | 1px solid #D1001F | vhs |
+| 37 | Fallout Pip-Boy | Pop-Culture | Монохромный ламповый зеленый интерфейс с сеткой сканирования. (rad-crt, контраст: высокий) | #061005 / #0D1E0D / #42D94B / #7BFF6F | 14px | 1px solid #1C6F22 | pipboy |
+| 38 | Dune Arrakis | Pop-Culture | Песок и жара: оранжево-бежевые грани с резкими углами. (песчаный брутализм, контраст: высокий) | #2D1C0E / #A56B2E / #E3842E / #F6DEC2 | 4px | 1px solid #2A1307 | dune |
+| 39 | Biohazard | Pop-Culture | Черно-желтый карантинный сигнал с предупреждающими полосами. (danger zone, контраст: очень высокий) | #0A0A0A / #181818 / #FFD600 / #FFF9CF | 6px | 2px solid #FFD600 | biohazard |
+| 40 | Tron Legacy | Pop-Culture | Темная сетка и неоновые голубые контуры в режиме outline-only. (neon grid, контраст: высокий) | #080E1A / transparent / #00B8FF / #C9ECFF | 14px | 1px solid #00B8FF | tron |
+| 41 | Blueprint Cyanotype | Art & History | Синька с осями, сеткой и легким рукописным ощущением. (чертежный, контраст: высокий) | #0A2A63 / #0F377B / #FFFFFF / #F3FAFF | 14px | 1px solid #FFFFFF | cyanotype |
+| 42 | Bauhaus Original | Art & History | Белая база с чистыми первичными цветами и базовыми формами. (геометрический модернизм, контраст: высокий) | #FFFFFF / #FFFFFF / #E63946 / #111111 | 0px | 1px solid #111111 | bauhaus |
+| 43 | Ukiyo-e | Art & History | Морская волна, бумага и красный акцент в стиле старых оттисков. (японская гравюра, контраст: средний) | #E8DDC9 / #F5EBD9 / #B13A2A / #223A53 | 14px | 1px solid #3D6B88 | ukiyoe |
+| 44 | Art Deco | Art & History | Черно-золотая элегантность с геометрическим паттерном деко. (gatsby luxe, контраст: высокий) | #0B0A0A / #171414 / #D4AF37 / #F3E4BC | 14px | 1px solid #D4AF37 | deco |
+| 45 | Soviet Constructivism | Art & History | Диагонали, рубленые формы и агрессивный красно-черный контраст. (агитплакат, контраст: очень высокий) | #F5EBDD / #FAF1E4 / #C1121F / #121212 | 0px | 3px solid #000000 | construct |
+| 46 | Infrared | Experimental | Тепловые пятна от синего к красному и жёлтому без жёстких контуров. (тепловизор, контраст: высокий) | #16052F / rgba(0,0,0,0.25) / #FDE047 / #FFF8E2 | 14px | 1px solid #FDE047 | infrared |
+| 47 | Negative Space | Experimental | Черный фон и белый контент с инверсией внутри внутренних блоков. (оптическая инверсия, контраст: очень высокий) | #0A0A0A / #FFFFFF / #FFFFFF / #FFFFFF | 14px | 1px solid #FFFFFF | negative |
+| 48 | ASCII Art | Experimental | Интерфейс из символов и моноширинной ритмики. (терминальная графика, контраст: высокий) | #101010 / #181818 / #9AE66E / #E7E7E7 | 14px | 1px solid #9AE66E | ascii |
+| 49 | Origami | Experimental | Складки, острые углы и теневые плоскости бумажных модулей. (бумажная пластика, контраст: средний) | #F4F6F8 / #FFFFFF / #5D7FA3 / #1F2933 | 4px | 1px solid #5D7FA3 | origami |
+| 50 | Underwater Abyss | Experimental | Почти черная бездна, где элементы проявляются при наведении. (темная глубина, контраст: низкий) | #020A14 / rgba(8,24,46,0.52) / #5FC5FF / #BEE6FF | 14px | 1px solid #245C84 | abyss |
+| 51 | Neural Link | Future UI | Нейронные линии, мягкая пульсация и серо-розовый биотех. (биотех, контраст: средний) | #E3E5E8 / #F3F4F6 / #E75D8C / #33343B | 14px | 1px solid #8B93A5 | neural |
+| 52 | Star Trek LCARS | Future UI | Яркие модульные блоки LCARS с характерными скруглениями. (олдскульный sci-fi, контраст: высокий) | #0D0D1F / #13132B / #F6A04D / #F4E8D2 | 28px | 1px solid #F6A04D | lcars |
+| 53 | Hologram Blue | Future UI | Полупрозрачный голубой интерфейс со строчным мерцанием. (цифровой фантом, контраст: средний) | #06192E / rgba(118,198,255,0.14) / #7CD7FF / #DDF4FF | 14px | 1px solid #7CD7FF | hologram |
+| 54 | Nanotech | Future UI | Глянцевый черный с текучими ртутными переходами состояний. (жидкая тьма, контраст: средний) | #050505 / #121212 / #7A7A7A / #D8D8D8 | 22px | 1px solid #3C3C3C | nanotech |
+| 55 | White Room | Future UI | Абсолютно белая среда с тонкими серыми контурами и dissolve-появлением. (стерильная матрица, контраст: низкий) | #FFFFFF / #FFFFFF / #A2A7AF / #80858E | 14px | 1px solid #D0D3D8 | whiteroom |
+| 56 | Old Newspaper | Mix | Желтая бумага, колонная верстка и гравюрный характер. (историческая типографика, контраст: средний) | #EEDFB8 / #F5E9C8 / #4B3A27 / #2D2418 | 14px | 1px solid #4B3A27 | newspaper |
+| 57 | Chalkboard | Mix | Темный шифер с меловыми линиями и потертостями. (школьная доска, контраст: средний) | #13291F / #1D3A2D / #E8F0E6 / #F3F7F2 | 14px | 1px solid #8FC0A9 | chalk |
+| 58 | Lego Brick | Mix | Яркие чистые цвета, блочная геометрия и характерные пупырышки. (игровой конструктор, контраст: высокий) | #F7F7F7 / #FFFFFF / #E63946 / #1A1A1A | 12px | 3px solid #F5C400 | lego |
+| 59 | Luxury Yacht | Mix | Темное дерево, металлические акценты и палубные горизонтали. (тик и сталь, контраст: средний) | #1F1712 / #3B2B21 / #BFC7D1 / #E8DED3 | 14px | 1px solid #BFC7D1 | yacht |
+| 60 | Post-Apocalyptic | Mix | Ржавчина, пыль и поврежденные поверхности с цифровыми артефактами. (rust & dirt, контраст: высокий) | #2A1F1A / #3B2C25 / #A34E2C / #E2D2BE | 14px | 1px solid #A34E2C | wasteland |
+
+## Как добавить новую тему
+
+1. Добавь объект в массив `themesCatalog` в `themes.js` с полями: `id`, `name`, `family`, `mood`, `contrast`, `description`, `tokens`.
+2. Укажи ключевые токены (`bg`, `surface`, `text`, `accent`, `radius`, `borderColor`, `borderWidth`, `borderStyle`).
+3. Если нужен спец-режим — задай `tokens.effect` и добавь CSS-правила `[data-effect="..."]` в `style.css`.
+4. Проверь, что новая тема отображается в селекте и в лабораторных блоках.

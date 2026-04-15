@@ -10,7 +10,7 @@ const base = {
     surfaceOverlay: 'none'
 };
 
-export const themes = [
+const themesCatalog = [
     {
         id: 'atomic-heart-retro',
         name: 'Atomic Heart Retro',
@@ -18,7 +18,7 @@ export const themes = [
         mood: 'ретро-индустриализм',
         contrast: 'средний',
         description: 'Утопический индустриализм 50-х: металл, дерево и агит-эстетика.',
-        tokens: { ...base, bg: '#F4F1EA', bgGradient: 'linear-gradient(180deg,#F4F1EA 0%,#EDE6D5 100%)', surface: '#E3DCC8', text: '#2B2523', accent: '#A62A2A', accentAlt: '#5C6B64', borderColor: '#2B2523', chip: 'rgba(92,107,100,0.18)', buttonText: '#F4F1EA', radius: '18px', borderWidth: '2px', font: "'Courier Prime', monospace", shadow: '5px 5px 0 rgba(43,37,35,0.35)' }
+        tokens: { ...base, bg: '#F4F1EA', bgGradient: 'linear-gradient(180deg,#F4F1EA 0%,#EDE6D5 100%)', surface: '#E3DCC8', text: '#2B2523', accent: '#A62A2A', accentAlt: '#5C6B64', borderColor: '#2B2523', chip: 'rgba(92,107,100,0.18)', buttonText: '#F4F1EA', radius: '18px', borderWidth: '2px', font: "'Courier Prime', monospace", shadow: '5px 5px 0 rgba(43,37,35,0.35)', effect: 'atomic-retro' }
     },
     {
         id: 'cyberpunk-neon',
@@ -45,7 +45,7 @@ export const themes = [
         mood: 'ностальгия и глянец',
         contrast: 'высокий',
         description: 'Пиксели, неоновая бирюза и градиенты раннего интернета.',
-        tokens: { ...base, bg: '#FFB6C1', bgGradient: 'linear-gradient(180deg,#FFB6C1 0%,#8A2BE2 70%,#4F0C8A 100%)', surface: '#8A2BE2', text: '#00FFFF', accent: '#FF00FF', accentAlt: '#7FFF00', borderColor: '#00FFFF', chip: 'rgba(127,255,0,0.18)', buttonText: '#2B004A', radius: '0px', borderStyle: 'dashed', borderWidth: '3px', font: "'Press Start 2P', cursive", textScale: '0.84', shadow: '6px 6px 0 #FF00FF', effect: 'grid' }
+        tokens: { ...base, bg: '#FFB6C1', bgGradient: 'linear-gradient(180deg,#FFB6C1 0%,#8A2BE2 70%,#4F0C8A 100%)', surface: '#8A2BE2', text: '#00FFFF', accent: '#FF00FF', accentAlt: '#7FFF00', borderColor: '#00FFFF', chip: 'rgba(127,255,0,0.18)', buttonText: '#2B004A', radius: '0px', borderStyle: 'solid', borderWidth: '2px', font: "'Press Start 2P', cursive", textScale: '0.84', shadow: '6px 6px 0 #FF00FF', effect: 'grid' }
     },
     {
         id: 'forest-fog',
@@ -554,5 +554,56 @@ export const themes = [
     },
 
 ];
+
+export const themes = Object.freeze(themesCatalog.map((theme) => ({
+    ...theme,
+    tokens: { ...theme.tokens }
+})));
+
+export const themeTokenLegend = Object.freeze({
+    bg: 'Основной цвет фона приложения',
+    bgGradient: 'Градиент фона (или none)',
+    surface: 'Цвет карточек/поверхностей',
+    text: 'Основной цвет текста',
+    accent: 'Главный акцент и CTA',
+    accentAlt: 'Вторичный акцент',
+    borderColor: 'Базовый цвет границ',
+    borderWidth: 'Толщина границ',
+    borderStyle: 'Стиль границ',
+    radius: 'Базовое скругление компонентов',
+    shadow: 'Тень карточек/контролов',
+    effect: 'Спец-эффект темы (glow, glass, grid и т.д.)'
+});
+
+export const themesByFamily = Object.freeze(
+    themes.reduce((acc, theme) => {
+        if (!acc[theme.family]) {
+            acc[theme.family] = [];
+        }
+        acc[theme.family].push(theme);
+        return acc;
+    }, {})
+);
+
+export const themeDocs = Object.freeze(
+    themes.map((theme) => ({
+        id: theme.id,
+        name: theme.name,
+        family: theme.family,
+        mood: theme.mood,
+        contrast: theme.contrast,
+        description: theme.description,
+        colors: {
+            bg: theme.tokens.bg,
+            surface: theme.tokens.surface,
+            text: theme.tokens.text,
+            accent: theme.tokens.accent,
+            accentAlt: theme.tokens.accentAlt
+        },
+        radius: theme.tokens.radius,
+        border: `${theme.tokens.borderWidth} ${theme.tokens.borderStyle} ${theme.tokens.borderColor}`,
+        effect: theme.tokens.effect || 'none'
+    }))
+);
 
 export const defaultThemeId = 'atomic-heart-retro';
