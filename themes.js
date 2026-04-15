@@ -10,7 +10,7 @@ const base = {
     surfaceOverlay: 'none'
 };
 
-export const themes = [
+const themesCatalog = [
     {
         id: 'atomic-heart-retro',
         name: 'Atomic Heart Retro',
@@ -554,5 +554,56 @@ export const themes = [
     },
 
 ];
+
+export const themes = Object.freeze(themesCatalog.map((theme) => ({
+    ...theme,
+    tokens: { ...theme.tokens }
+})));
+
+export const themeTokenLegend = Object.freeze({
+    bg: 'Основной цвет фона приложения',
+    bgGradient: 'Градиент фона (или none)',
+    surface: 'Цвет карточек/поверхностей',
+    text: 'Основной цвет текста',
+    accent: 'Главный акцент и CTA',
+    accentAlt: 'Вторичный акцент',
+    borderColor: 'Базовый цвет границ',
+    borderWidth: 'Толщина границ',
+    borderStyle: 'Стиль границ',
+    radius: 'Базовое скругление компонентов',
+    shadow: 'Тень карточек/контролов',
+    effect: 'Спец-эффект темы (glow, glass, grid и т.д.)'
+});
+
+export const themesByFamily = Object.freeze(
+    themes.reduce((acc, theme) => {
+        if (!acc[theme.family]) {
+            acc[theme.family] = [];
+        }
+        acc[theme.family].push(theme);
+        return acc;
+    }, {})
+);
+
+export const themeDocs = Object.freeze(
+    themes.map((theme) => ({
+        id: theme.id,
+        name: theme.name,
+        family: theme.family,
+        mood: theme.mood,
+        contrast: theme.contrast,
+        description: theme.description,
+        colors: {
+            bg: theme.tokens.bg,
+            surface: theme.tokens.surface,
+            text: theme.tokens.text,
+            accent: theme.tokens.accent,
+            accentAlt: theme.tokens.accentAlt
+        },
+        radius: theme.tokens.radius,
+        border: `${theme.tokens.borderWidth} ${theme.tokens.borderStyle} ${theme.tokens.borderColor}`,
+        effect: theme.tokens.effect || 'none'
+    }))
+);
 
 export const defaultThemeId = 'atomic-heart-retro';
