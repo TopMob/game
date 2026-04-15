@@ -592,7 +592,7 @@ select:focus-visible {
 }
 
 [data-effect='atomic-retro'] .chip {
-    border-style: dashed;
+    border-style: solid;
     text-transform: uppercase;
     font-size: 0.7rem;
 }

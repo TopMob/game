@@ -45,7 +45,7 @@ const themesCatalog = [
         mood: 'ностальгия и глянец',
         contrast: 'высокий',
         description: 'Пиксели, неоновая бирюза и градиенты раннего интернета.',
-        tokens: { ...base, bg: '#FFB6C1', bgGradient: 'linear-gradient(180deg,#FFB6C1 0%,#8A2BE2 70%,#4F0C8A 100%)', surface: '#8A2BE2', text: '#00FFFF', accent: '#FF00FF', accentAlt: '#7FFF00', borderColor: '#00FFFF', chip: 'rgba(127,255,0,0.18)', buttonText: '#2B004A', radius: '0px', borderStyle: 'dashed', borderWidth: '3px', font: "'Press Start 2P', cursive", textScale: '0.84', shadow: '6px 6px 0 #FF00FF', effect: 'grid' }
+        tokens: { ...base, bg: '#FFB6C1', bgGradient: 'linear-gradient(180deg,#FFB6C1 0%,#8A2BE2 70%,#4F0C8A 100%)', surface: '#8A2BE2', text: '#00FFFF', accent: '#FF00FF', accentAlt: '#7FFF00', borderColor: '#00FFFF', chip: 'rgba(127,255,0,0.18)', buttonText: '#2B004A', radius: '0px', borderStyle: 'solid', borderWidth: '2px', font: "'Press Start 2P', cursive", textScale: '0.84', shadow: '6px 6px 0 #FF00FF', effect: 'grid' }
     },
     {
         id: 'forest-fog',
