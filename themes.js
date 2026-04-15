@@ -532,7 +532,7 @@ const themesCatalog = [
         mood: 'игровой конструктор',
         contrast: 'высокий',
         description: 'Яркие чистые цвета, блочная геометрия и характерные пупырышки.',
-        tokens: { ...base, bg: '#F7F7F7', bgGradient: 'none', surface: '#FFFFFF', text: '#1A1A1A', accent: '#E63946', accentAlt: '#1D4ED8', borderColor: '#F5C400', chip: 'rgba(29,78,216,0.16)', buttonText: '#FFFFFF', radius: '12px', borderWidth: '3px', effect: 'lego' }
+        tokens: { ...base, bg: '#F2F4F8', bgGradient: 'linear-gradient(180deg,#F8FAFC 0%,#EDEFF4 100%)', surface: '#FFFFFF', text: '#1A1A1A', accent: '#E10600', accentAlt: '#0057B8', borderColor: '#F7D117', chip: 'rgba(0,87,184,0.18)', buttonText: '#FFFFFF', radius: '10px', borderWidth: '4px', font: "'Manrope', sans-serif", shadow: '0 12px 0 rgba(0,0,0,0.14)', effect: 'lego' }
     },
     {
         id: 'luxury-yacht',

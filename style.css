@@ -655,7 +655,88 @@ select:focus-visible {
 [data-effect='whiteroom'] .bento { animation: fadein 0.5s ease both; }
 [data-effect='newspaper'] .type-grid { column-gap: 1.2rem; }
 [data-effect='chalk'] .bento { filter: contrast(1.05) brightness(1.02); }
-[data-effect='lego'] button { border-width: 4px; box-shadow: inset 0 -4px 0 rgba(0,0,0,0.18), var(--shadow); }
+[data-effect='lego'] body {
+    background-image:
+        linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(237,239,244,0.2) 100%),
+        radial-gradient(circle at 20px 20px, rgba(247,209,23,0.18) 0 10px, transparent 11px),
+        radial-gradient(circle at 76px 72px, rgba(0,87,184,0.14) 0 10px, transparent 11px),
+        repeating-linear-gradient(0deg, rgba(26,26,26,0.04) 0 1px, transparent 1px 64px),
+        repeating-linear-gradient(90deg, rgba(26,26,26,0.04) 0 1px, transparent 1px 64px),
+        var(--bg-gradient);
+    background-size: auto, 96px 96px, 96px 96px, 64px 64px, 64px 64px, auto;
+}
+
+[data-effect='lego'] .layout-row {
+    border-bottom-width: 4px;
+    box-shadow: 0 8px 0 rgba(26,26,26,0.12);
+    padding-bottom: 1.1rem;
+}
+
+[data-effect='lego'] #themeTitle {
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 0 #ffffff, 0 5px 0 rgba(26,26,26,0.18);
+}
+
+[data-effect='lego'] .bento {
+    border-width: 4px;
+    border-radius: 10px;
+    box-shadow: 0 10px 0 rgba(26,26,26,0.16), var(--shadow);
+    background-image:
+        linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(248,250,252,0.98) 100%),
+        repeating-linear-gradient(90deg, rgba(0,87,184,0.08) 0 2px, transparent 2px 32px),
+        repeating-linear-gradient(0deg, rgba(225,6,0,0.06) 0 2px, transparent 2px 32px);
+}
+
+[data-effect='lego'] .bento::after {
+    opacity: 0.2;
+    background-image:
+        radial-gradient(circle at 16px 16px, rgba(247,209,23,0.35) 0 6px, rgba(247,209,23,0.12) 7px, transparent 10px),
+        radial-gradient(circle at 48px 48px, rgba(0,87,184,0.3) 0 5px, rgba(0,87,184,0.08) 6px, transparent 9px);
+    background-size: 64px 64px;
+}
+
+[data-effect='lego'] button {
+    border-width: 4px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    box-shadow: inset 0 -5px 0 rgba(0,0,0,0.2), 0 6px 0 rgba(0,0,0,0.14), var(--shadow);
+}
+
+[data-effect='lego'] .action-btn {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent-color) 85%, white 15%) 0%, var(--accent-color) 100%);
+}
+
+[data-effect='lego'] .secondary-btn {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent-alt) 28%, white 72%) 0%, color-mix(in srgb, var(--accent-alt) 55%, white 45%) 100%);
+}
+
+[data-effect='lego'] button:hover:not(:disabled),
+[data-effect='lego'] select:hover,
+[data-effect='lego'] input:hover {
+    transform: translate(-2px, -4px);
+}
+
+[data-effect='lego'] .chip {
+    border-width: 3px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.14);
+}
+
+[data-effect='lego'] .media-image {
+    background:
+        linear-gradient(145deg, #e10600 0 30%, #f7d117 30% 60%, #0057b8 60% 100%);
+    filter: saturate(1.15) contrast(1.05);
+}
+
+[data-effect='lego'] .swatch {
+    border-width: 3px;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.16);
+}
 [data-effect='yacht'] .bento { background-image: repeating-linear-gradient(0deg, rgba(191,199,209,0.08) 0 2px, transparent 2px 20px); }
 [data-effect='wasteland'] .bento { background-image: radial-gradient(circle at 80% 20%, rgba(163,78,44,0.24), transparent 30%), radial-gradient(circle at 10% 80%, rgba(80,45,32,0.3), transparent 35%); }
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
