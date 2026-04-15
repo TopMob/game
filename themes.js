@@ -18,7 +18,7 @@ const themesCatalog = [
         mood: 'ретро-индустриализм',
         contrast: 'средний',
         description: 'Утопический индустриализм 50-х: металл, дерево и агит-эстетика.',
-        tokens: { ...base, bg: '#F4F1EA', bgGradient: 'linear-gradient(180deg,#F4F1EA 0%,#EDE6D5 100%)', surface: '#E3DCC8', text: '#2B2523', accent: '#A62A2A', accentAlt: '#5C6B64', borderColor: '#2B2523', chip: 'rgba(92,107,100,0.18)', buttonText: '#F4F1EA', radius: '18px', borderWidth: '2px', font: "'Courier Prime', monospace", shadow: '5px 5px 0 rgba(43,37,35,0.35)' }
+        tokens: { ...base, bg: '#F4F1EA', bgGradient: 'linear-gradient(180deg,#F4F1EA 0%,#EDE6D5 100%)', surface: '#E3DCC8', text: '#2B2523', accent: '#A62A2A', accentAlt: '#5C6B64', borderColor: '#2B2523', chip: 'rgba(92,107,100,0.18)', buttonText: '#F4F1EA', radius: '18px', borderWidth: '2px', font: "'Courier Prime', monospace", shadow: '5px 5px 0 rgba(43,37,35,0.35)', effect: 'atomic-retro' }
     },
     {
         id: 'cyberpunk-neon',
