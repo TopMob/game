@@ -16,11 +16,11 @@
 .input,
 .select {
   width: 100%;
-  border: 0;
-  border-radius: 20px;
+  border: var(--panel-border);
+  border-radius: var(--radius);
   background: var(--surface);
   padding: 11px 14px;
-  box-shadow: inset 6px 6px 12px #ccd4de, inset -6px -6px 12px #f4f7fb;
+  box-shadow: var(--inset-shadow);
 }
 
 .actions {
@@ -29,16 +29,16 @@
 }
 
 .button {
-  border: 0;
-  border-radius: 20px;
+  border: var(--panel-border);
+  border-radius: var(--radius);
   background: var(--surface);
   padding: 10px 14px;
   cursor: pointer;
-  box-shadow: 6px 6px 12px var(--soft-shadow), -6px -6px 12px var(--soft-light);
+  box-shadow: var(--button-shadow);
 }
 
 .button:active {
-  box-shadow: inset 5px 5px 10px var(--soft-shadow), inset -5px -5px 10px var(--soft-light);
+  box-shadow: var(--button-active-shadow);
 }
 
 .button-secondary {
@@ -51,9 +51,10 @@
 }
 
 .summary-card {
-  border-radius: 20px;
+  border-radius: var(--radius);
+  border: var(--panel-border);
   background: var(--surface);
-  box-shadow: inset 5px 5px 10px #c6ced8, inset -5px -5px 10px #f8fbff;
+  box-shadow: var(--inset-shadow);
   padding: 12px 14px;
 }
 
@@ -80,9 +81,10 @@
 }
 
 .task {
-  border-radius: 20px;
+  border-radius: var(--radius);
+  border: var(--panel-border);
   background: var(--surface);
-  box-shadow: 8px 8px 16px var(--soft-shadow), -8px -8px 16px var(--soft-light);
+  box-shadow: var(--panel-shadow);
   padding: 14px;
   display: grid;
   gap: 10px;
@@ -113,10 +115,11 @@
 
 .tag {
   border-radius: 999px;
+  border: var(--panel-border);
   padding: 5px 10px;
   font-size: 12px;
   background: var(--surface);
-  box-shadow: inset 3px 3px 6px #c8d0da, inset -3px -3px 6px #f8fbff;
+  box-shadow: var(--chip-shadow);
 }
 
 .tag-urgent {
@@ -143,10 +146,37 @@
 }
 
 .empty {
-  border-radius: 20px;
+  border-radius: var(--radius);
+  border: var(--panel-border);
   background: var(--surface);
-  box-shadow: inset 6px 6px 12px #c8d1db, inset -6px -6px 12px #f6f9ff;
+  box-shadow: var(--inset-shadow);
   padding: 18px;
   text-align: center;
   color: var(--muted);
+}
+
+.theme-toggle {
+  display: grid;
+  gap: 6px;
+  min-width: 180px;
+}
+
+.theme-toggle .label {
+  text-align: right;
+}
+
+:root[data-theme='glitch'] .task,
+:root[data-theme='glitch'] .summary-card {
+  position: relative;
+}
+
+:root[data-theme='glitch'] .task::after,
+:root[data-theme='glitch'] .summary-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 246, 255, 0.08), transparent 40%, rgba(255, 0, 255, 0.08));
+  mix-blend-mode: screen;
 }
