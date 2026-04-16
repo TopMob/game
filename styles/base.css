@@ -1,12 +1,15 @@
 :root {
   color-scheme: light;
-  --bg: #ffffff;
-  --text: #111111;
-  --muted: #5f5f5f;
-  --line: #dddddd;
-  --surface: #f7f7f7;
-  --accent: #000000;
-  --danger: #1f1f1f;
+  --bg: #e0e5ec;
+  --surface: #e0e5ec;
+  --text: #3a4a61;
+  --muted: #7a8ca8;
+  --accent: #3a4a61;
+  --soft-light: #f4f7fb;
+  --soft-shadow: #bec8d4;
+  --danger: #5a2f2f;
+  --warning: #6c5b2e;
+  --success: #35523c;
 }
 
 * {
@@ -31,4 +34,5 @@ button,
 input,
 select {
   font: inherit;
+  color: inherit;
 }

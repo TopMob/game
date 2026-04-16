@@ -1,12 +1,11 @@
 .page {
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 32px 20px 48px;
+  padding: 36px 20px 56px;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 10px;
   margin-bottom: 24px;
 }
@@ -18,16 +17,15 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 
 .panel {
-  border: 1px solid var(--line);
+  border-radius: 20px;
   background: var(--surface);
-  border-radius: 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 9px 9px 18px var(--soft-shadow), -9px -9px 18px var(--soft-light);
+  padding: 18px;
+  display: grid;
   gap: 14px;
 }
 
@@ -42,7 +40,7 @@
   gap: 12px;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
   }

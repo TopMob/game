@@ -14,6 +14,15 @@ export function daysUntil(targetDate) {
   return Math.ceil((target.getTime() - today.getTime()) / DAY_MS);
 }
 
+export function addDays(date, days) {
+  const d = new Date(date);
+  d.setDate(d.getDate() + days);
+  return new Intl.DateTimeFormat('ru-RU', {
+    day: '2-digit',
+    month: '2-digit'
+  }).format(d);
+}
+
 export function formatDate(date) {
   return new Intl.DateTimeFormat('ru-RU', {
     day: '2-digit',

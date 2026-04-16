@@ -1,4 +1,16 @@
-import { daysUntil, eachDateUntil, toDateKey } from './date.js';
+import { addDays, daysUntil, eachDateUntil, toDateKey } from './date.js';
+
+const CAPACITY_HOURS = 4;
+
+function priorityFactor(priority) {
+  if (priority === 'high') {
+    return 1.25;
+  }
+  if (priority === 'low') {
+    return 0.85;
+  }
+  return 1;
+}
 
 export function buildLoadMap(tasks) {
   const map = new Map();
@@ -6,11 +18,12 @@ export function buildLoadMap(tasks) {
   tasks
     .filter((task) => !task.completed)
     .forEach((task) => {
-      const span = eachDateUntil(task.deadline);
-      const share = task.effortHours / Math.max(span.length, 1);
+      const days = eachDateUntil(task.deadline);
+      const adjusted = task.effortHours * priorityFactor(task.priority);
+      const perDay = adjusted / Math.max(days.length, 1);
 
-      span.forEach((key) => {
-        map.set(key, (map.get(key) || 0) + share);
+      days.forEach((key) => {
+        map.set(key, (map.get(key) || 0) + perDay);
       });
     });
 
@@ -31,39 +44,75 @@ export function getPeakLoad(loadMap) {
   return Number(max.toFixed(1));
 }
 
-export function getSmartReminderLevel(task, loadMap) {
-  const days = daysUntil(task.deadline);
-  const dailyShare = task.effortHours / Math.max(days + 1, 1);
-  const todayLoad = getTodayLoad(loadMap);
-  const pressure = todayLoad + dailyShare;
-
-  if (days < 0) {
-    return { label: 'Просрочено', tone: 'urgent' };
+export function getOverloadedDays(loadMap) {
+  let total = 0;
+  for (const value of loadMap.values()) {
+    if (value > CAPACITY_HOURS) {
+      total += 1;
+    }
   }
-
-  if (days <= 1 || pressure >= 6) {
-    return { label: 'Высокий приоритет', tone: 'urgent' };
-  }
-
-  if (days <= 3 || pressure >= 4) {
-    return { label: 'Стоит начать сейчас', tone: 'warning' };
-  }
-
-  return { label: 'Можно планировать спокойно', tone: 'normal' };
+  return total;
 }
 
-export function getRecommendation(task, loadMap) {
-  const deadlineDays = daysUntil(task.deadline);
-  const todayLoad = getTodayLoad(loadMap);
-  const startInDays = Math.max(Math.min(Math.floor(todayLoad / 2), deadlineDays), 0);
+export function getTaskMetrics(task, loadMap) {
+  const daysLeft = daysUntil(task.deadline);
+  const remainingDays = Math.max(daysLeft + 1, 1);
+  const adjustedEffort = task.effortHours * priorityFactor(task.priority);
+  const dailyNeed = adjustedEffort / remainingDays;
+  const freeToday = Math.max(CAPACITY_HOURS - getTodayLoad(loadMap), 0);
+  const bufferDays = Math.max(Math.floor((CAPACITY_HOURS - dailyNeed) * remainingDays / CAPACITY_HOURS), 0);
 
-  if (deadlineDays < 0) {
-    return 'Дедлайн уже прошел, начните с этой задачи в первую очередь';
+  return {
+    daysLeft,
+    dailyNeed: Number(dailyNeed.toFixed(1)),
+    freeToday: Number(freeToday.toFixed(1)),
+    bufferDays
+  };
+}
+
+export function getSmartReminder(task, loadMap) {
+  const metrics = getTaskMetrics(task, loadMap);
+
+  if (metrics.daysLeft < 0) {
+    return {
+      label: 'Просрочено',
+      tone: 'urgent',
+      text: 'Сделайте первый блок работы прямо сейчас и перенесите новый дедлайн.'
+    };
   }
 
-  if (startInDays === 0) {
-    return 'Рекомендуем выделить время на эту задачу сегодня';
+  if (metrics.daysLeft <= 1 || metrics.dailyNeed >= 3) {
+    return {
+      label: 'Критично',
+      tone: 'urgent',
+      text: `Сегодня нужно минимум ${Math.max(metrics.dailyNeed, 2).toFixed(1)} ч, иначе задача станет перегруженной.`
+    };
   }
 
-  return `Оптимальный старт: через ${startInDays} дн.`;
+  if (metrics.daysLeft <= 3 || metrics.freeToday < 1.5) {
+    return {
+      label: 'Важно',
+      tone: 'warning',
+      text: `Лучше начать сегодня короткой сессией ${Math.min(metrics.dailyNeed + 0.5, 2).toFixed(1)} ч.`
+    };
+  }
+
+  return {
+    label: 'Стабильно',
+    tone: 'calm',
+    text: `Достаточно ${metrics.dailyNeed.toFixed(1)} ч в день, запас по сроку: ${metrics.bufferDays} дн.`
+  };
+}
+
+export function buildTaskPlan(task, loadMap) {
+  const metrics = getTaskMetrics(task, loadMap);
+  const sessions = Math.max(Math.ceil(task.effortHours / 1.5), 1);
+  const startOffset = Math.min(Math.max(metrics.daysLeft - Math.ceil(task.effortHours / 2), 0), 6);
+  const startDate = addDays(new Date(), startOffset);
+
+  if (metrics.daysLeft < 0) {
+    return 'План: 2 интенсивные сессии сегодня и новая дата сдачи после согласования.';
+  }
+
+  return `План: старт ${startDate}, ${sessions} сессий по ${(task.effortHours / sessions).toFixed(1)} ч.`;
 }

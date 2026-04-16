@@ -1,11 +1,11 @@
 .form {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .field {
   display: grid;
-  gap: 6px;
+  gap: 7px;
 }
 
 .label {
@@ -15,66 +15,75 @@
 
 .input,
 .select {
-  border: 1px solid var(--line);
-  background: #fff;
-  color: var(--text);
-  padding: 10px 12px;
-  border-radius: 10px;
+  width: 100%;
+  border: 0;
+  border-radius: 20px;
+  background: var(--surface);
+  padding: 11px 14px;
+  box-shadow: inset 6px 6px 12px #ccd4de, inset -6px -6px 12px #f4f7fb;
 }
 
 .actions {
   display: flex;
   gap: 10px;
-  margin-top: 4px;
 }
 
 .button {
-  border: 1px solid var(--accent);
-  border-radius: 10px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--surface);
   padding: 10px 14px;
-  background: var(--accent);
-  color: #fff;
   cursor: pointer;
+  box-shadow: 6px 6px 12px var(--soft-shadow), -6px -6px 12px var(--soft-light);
+}
+
+.button:active {
+  box-shadow: inset 5px 5px 10px var(--soft-shadow), inset -5px -5px 10px var(--soft-light);
 }
 
 .button-secondary {
-  background: #fff;
-  color: var(--text);
+  color: var(--muted);
 }
 
 .summary {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .summary-card {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 12px;
-  background: #fff;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: inset 5px 5px 10px #c6ced8, inset -5px -5px 10px #f8fbff;
+  padding: 12px 14px;
 }
 
 .summary-title {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--muted);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .summary-value {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
+}
+
+.summary-note {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .task-list {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .task {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 8px 8px 16px var(--soft-shadow), -8px -8px 16px var(--soft-light);
+  padding: 14px;
   display: grid;
   gap: 10px;
 }
@@ -103,22 +112,23 @@
 }
 
 .tag {
-  border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 4px 10px;
+  padding: 5px 10px;
   font-size: 12px;
+  background: var(--surface);
+  box-shadow: inset 3px 3px 6px #c8d0da, inset -3px -3px 6px #f8fbff;
 }
 
 .tag-urgent {
-  border-color: #111;
-  background: #111;
-  color: #fff;
+  color: var(--danger);
 }
 
 .tag-warning {
-  border-color: #555;
-  background: #555;
-  color: #fff;
+  color: var(--warning);
+}
+
+.tag-calm {
+  color: var(--success);
 }
 
 .task-actions {
@@ -126,11 +136,17 @@
   gap: 8px;
 }
 
+.task-plan {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 .empty {
-  border: 1px dashed var(--line);
-  border-radius: 12px;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: inset 6px 6px 12px #c8d1db, inset -6px -6px 12px #f6f9ff;
   padding: 18px;
   text-align: center;
   color: var(--muted);
-  background: #fff;
 }

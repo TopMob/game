@@ -1,4 +1,8 @@
+import { toDateKey } from '../utils/date.js';
+
 export function renderTaskForm(container, { onSubmit }) {
+  const minDate = toDateKey(new Date());
+
   container.innerHTML = `
     <label class="field">
       <span class="label">Название задачи</span>
@@ -12,7 +16,7 @@ export function renderTaskForm(container, { onSubmit }) {
 
     <label class="field">
       <span class="label">Дедлайн</span>
-      <input class="input" name="deadline" type="date" required />
+      <input class="input" name="deadline" type="date" min="${minDate}" required />
     </label>
 
     <label class="field">
@@ -38,12 +42,17 @@ export function renderTaskForm(container, { onSubmit }) {
     event.preventDefault();
     const formData = new FormData(container);
     const payload = {
-      title: formData.get('title'),
-      subject: formData.get('subject'),
+      title: String(formData.get('title') || '').trim(),
+      subject: String(formData.get('subject') || '').trim(),
       deadline: formData.get('deadline'),
       effortHours: Number(formData.get('effortHours')),
       priority: formData.get('priority')
     };
+
+    if (!payload.title || !payload.subject || !payload.deadline || payload.effortHours < 1) {
+      return;
+    }
+
     onSubmit(payload);
     container.reset();
   });
