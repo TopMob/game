@@ -552,6 +552,51 @@ const themesCatalog = [
         description: 'Ржавчина, пыль и поврежденные поверхности с цифровыми артефактами.',
         tokens: { ...base, bg: '#2A1F1A', bgGradient: 'linear-gradient(180deg,#2A1F1A 0%,#1A1411 100%)', surface: '#3B2C25', text: '#E2D2BE', accent: '#A34E2C', accentAlt: '#6B3C2A', borderColor: '#A34E2C', chip: 'rgba(163,78,44,0.2)', buttonText: '#F6E8D9', effect: 'wasteland' }
     },
+    {
+        id: 'neuro-glitch',
+        name: 'Neuro Glitch',
+        family: 'Digital Chaos',
+        mood: 'кибернетический сбой',
+        contrast: 'очень высокий',
+        description: 'Плотный интерфейс с микрошрифтами и глитч-эффектами.',
+        tokens: { ...base, bg: '#050508', bgGradient: 'linear-gradient(45deg, #050508, #1a0b1c)', surface: '#0d0812', text: '#00ffcc', accent: '#ff0055', accentAlt: '#7700ff', borderColor: '#ff0055', chip: 'rgba(255,0,85,0.2)', buttonText: '#ffffff', radius: '2px', borderWidth: '3px', borderStyle: 'dashed', font: "'Fira Code', monospace", textScale: '0.85', cardPadding: '0.8rem', shadow: '8px 8px 0 rgba(255,0,85,0.4)', effect: 'neuro-glitch' }
+    },
+    {
+        id: 'royal-folio',
+        name: 'Royal Folio',
+        family: 'Editorial',
+        mood: 'воздушная классика',
+        contrast: 'высокий',
+        description: 'Много воздуха, крупная антиква и тончайшие линии.',
+        tokens: { ...base, bg: '#faf8f5', bgGradient: 'none', surface: '#ffffff', text: '#111111', accent: '#8b0000', accentAlt: '#d4af37', borderColor: '#d4af37', chip: 'rgba(212,175,55,0.1)', buttonText: '#ffffff', radius: '0px', borderWidth: '1px', borderStyle: 'solid', font: "'Playfair Display', serif", textScale: '1.2', cardPadding: '3.5rem', shadow: '0 30px 60px rgba(0,0,0,0.05)', effect: 'royal-folio' }
+    },
+    {
+        id: 'brutal-cardboard',
+        name: 'Brutal Cardboard',
+        family: 'Raw Web',
+        mood: 'индустриальный картон',
+        contrast: 'очень высокий',
+        description: 'Массивные блоки, теплые тона и гипертрофированные рамки.',
+        tokens: { ...base, bg: '#d9c8b4', bgGradient: 'none', surface: '#c4b299', text: '#1a1a1a', accent: '#e63946', accentAlt: '#1d3557', borderColor: '#1a1a1a', chip: 'rgba(26,26,26,0.1)', buttonText: '#ffffff', radius: '0px', borderWidth: '6px', borderStyle: 'solid', font: "'Inter', sans-serif", textScale: '1.1', cardPadding: '1.5rem', shadow: '12px 12px 0 #1a1a1a', effect: 'brutal-box', transition: 'none' }
+    },
+    {
+        id: 'aero-glass',
+        name: 'Aero Glass',
+        family: 'Glassmorphism',
+        mood: 'невесомость',
+        contrast: 'низкий',
+        description: 'Экстремальное скругление, размытие и пастельные блики.',
+        tokens: { ...base, bg: '#e0eaf5', bgGradient: 'radial-gradient(circle at 0% 0%, #ffffff, #e0eaf5 70%)', surface: 'rgba(255,255,255,0.4)', text: '#2c3e50', accent: '#3498db', accentAlt: '#9b59b6', borderColor: 'rgba(255,255,255,0.8)', chip: 'rgba(255,255,255,0.5)', buttonText: '#ffffff', radius: '48px', borderWidth: '2px', borderStyle: 'solid', font: "'Manrope', sans-serif", textScale: '0.95', cardPadding: '2.5rem', shadow: '0 20px 40px rgba(52,152,219,0.15)', effect: 'aero-glass', surfaceOverlay: 'blur(20px)' }
+    },
+    {
+        id: 'cyber-terminal',
+        name: 'Cyber Terminal',
+        family: 'Hacker Style',
+        mood: 'интерфейс корабля',
+        contrast: 'высокий',
+        description: 'Микротекст, неоновые обводки без заливки, техно-шрифт.',
+        tokens: { ...base, bg: '#020202', bgGradient: 'none', surface: 'transparent', text: '#00e5ff', accent: '#ff003c', accentAlt: '#00e5ff', borderColor: '#00e5ff', chip: 'rgba(0,229,255,0.1)', buttonText: '#020202', radius: '8px', borderWidth: '1px', borderStyle: 'solid', font: "'Orbitron', sans-serif", textScale: '0.8', cardPadding: '1.2rem', shadow: 'inset 0 0 10px rgba(0,229,255,0.2), 0 0 10px rgba(0,229,255,0.2)', effect: 'cyber-terminal' }
+    },
 
 ];
 
