@@ -31,8 +31,8 @@ let activeFilter = 'all';
 let toastTimer = 0;
 let unusedThemePool = [];
 
-if (themeList.length !== 60) {
-    throw new Error(`Ожидается 60 тем, найдено: ${themeList.length}`);
+if (themeList.length !== 65) {
+    throw new Error(`Ожидается 65 тем, найдено: ${themeList.length}`);
 }
 
 function resetUnusedThemePool() {
