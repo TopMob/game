@@ -10,15 +10,29 @@
     <header class="layout-row">
         <h1>UI Laboratory</h1>
         <div class="controls">
-            <label for="themeSelect">Тема</label>
-            <select id="themeSelect"></select>
+            <span class="control-label">Тема</span>
+            <div class="theme-picker" id="themePicker">
+                <button id="themePickerToggle" class="theme-picker-toggle" type="button" aria-haspopup="dialog" aria-expanded="false">
+                    <span id="themePickerLabel">Выберите тему</span>
+                </button>
+                <div id="themePickerPanel" class="theme-picker-panel" role="dialog" aria-label="Выбор темы" hidden>
+                    <div class="theme-picker-filters" id="themeFilterBar">
+                        <button type="button" class="filter-chip is-active" data-filter="all">Все</button>
+                        <button type="button" class="filter-chip" data-filter="light">Светлые</button>
+                        <button type="button" class="filter-chip" data-filter="dark">Темные</button>
+                        <button type="button" class="filter-chip" data-filter="contrast">Высокий контраст</button>
+                    </div>
+                    <div id="themePickerList" class="theme-picker-list"></div>
+                </div>
+            </div>
+            <button id="exportCss" class="secondary-btn" type="button">Экспорт CSS</button>
             <button id="randomTheme" class="secondary-btn" type="button">Случайная</button>
         </div>
     </header>
 
     <main id="labGrid" class="lab-grid"></main>
 
-    <aside class="toast" role="status" aria-live="polite">
+    <aside class="toast is-hidden" role="status" aria-live="polite">
         <strong>Theme Test Mode</strong>
         <span>Проверяй контраст, глубину, анимации и читабельность.</span>
     </aside>

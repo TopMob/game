@@ -1,4 +1,4 @@
-const variableMap = {
+export const variableMap = {
     bg: '--bg-color',
     bgGradient: '--bg-gradient',
     surface: '--surface-color',
@@ -19,6 +19,15 @@ const variableMap = {
     transition: '--ui-transition'
 };
 
+export const signatureVariableOrder = [
+    '--signature-angle',
+    '--signature-grain-angle',
+    '--signature-stripe-size',
+    '--signature-glow-size',
+    '--signature-pattern-drift',
+    '--signature-opacity'
+];
+
 function hashThemeId(themeId) {
     return [...themeId].reduce((acc, char) => ((acc << 5) - acc) + char.charCodeAt(0), 0);
 }
@@ -38,7 +47,7 @@ function parseContrastWeight(contrast) {
     }
 }
 
-function applySignatureVariables(root, theme) {
+function resolveSignatureVariables(theme) {
     const hash = Math.abs(hashThemeId(theme.id));
     const stripeAngle = 15 + (hash % 150);
     const grainAngle = 5 + (hash % 80);
@@ -47,23 +56,46 @@ function applySignatureVariables(root, theme) {
     const patternDrift = 12 + (hash % 28);
     const contrastWeight = parseContrastWeight(theme.contrast);
 
-    root.style.setProperty('--signature-angle', `${stripeAngle}deg`);
-    root.style.setProperty('--signature-grain-angle', `${grainAngle}deg`);
-    root.style.setProperty('--signature-stripe-size', `${stripeSize}px`);
-    root.style.setProperty('--signature-glow-size', `${glowSize}px`);
-    root.style.setProperty('--signature-pattern-drift', `${patternDrift}px`);
-    root.style.setProperty('--signature-opacity', contrastWeight.toFixed(2));
+    return {
+        '--signature-angle': `${stripeAngle}deg`,
+        '--signature-grain-angle': `${grainAngle}deg`,
+        '--signature-stripe-size': `${stripeSize}px`,
+        '--signature-glow-size': `${glowSize}px`,
+        '--signature-pattern-drift': `${patternDrift}px`,
+        '--signature-opacity': contrastWeight.toFixed(2)
+    };
+}
+
+export function getThemeCssVariables(theme) {
+    const variables = {};
+
+    Object.entries(variableMap).forEach(([tokenKey, cssVar]) => {
+        const value = theme.tokens[tokenKey];
+        if (value !== undefined) {
+            variables[cssVar] = value;
+        }
+    });
+
+    const signatureVariables = resolveSignatureVariables(theme);
+    signatureVariableOrder.forEach((key) => {
+        variables[key] = signatureVariables[key];
+    });
+
+    return variables;
+}
+
+export function buildThemeCssRootBlock(theme) {
+    const variables = getThemeCssVariables(theme);
+    const lines = Object.entries(variables).map(([key, value]) => `    ${key}: ${value};`);
+    return [':root {', ...lines, '}'].join('\n');
 }
 
 export function applyTheme(theme) {
     const root = document.documentElement;
-    Object.entries(variableMap).forEach(([tokenKey, cssVar]) => {
-        const value = theme.tokens[tokenKey];
-        if (value !== undefined) {
-            root.style.setProperty(cssVar, value);
-        }
+    const variables = getThemeCssVariables(theme);
+    Object.entries(variables).forEach(([cssVar, value]) => {
+        root.style.setProperty(cssVar, value);
     });
-    applySignatureVariables(root, theme);
     root.setAttribute('data-theme-id', theme.id);
     root.setAttribute('data-effect', theme.tokens.effect || 'none');
 }
