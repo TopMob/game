@@ -888,655 +888,115 @@ select:focus-visible,
     box-shadow: inset 0 0 20px rgba(255,0,60,0.4), 0 0 20px rgba(255,0,60,0.4);
     border-color: #ff003c;
 }
-
-[data-theme-id] .bento { transition: var(--ui-transition), transform 220ms ease, box-shadow 220ms ease; }
-[data-effect='atomic-heart-retro'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 12%, transparent 88%) 0 6px, transparent 7px), repeating-linear-gradient(0deg, color-mix(in srgb, var(--text-color) 5%, transparent 95%) 0 1px, transparent 1px 8px);
-}
-[data-effect='atomic-heart-retro'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.000);
-    box-shadow: var(--shadow), 7px 7px 10px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='atomic-heart-retro'] #themeTitle {
-    text-shadow: 0 0 6px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 12px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='cyberpunk-neon'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 13%, transparent 87%) 0 7px, transparent 8px), repeating-linear-gradient(17deg, color-mix(in srgb, var(--text-color) 6%, transparent 94%) 0 1px, transparent 1px 9px);
-}
-[data-effect='cyberpunk-neon'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.006);
-    box-shadow: var(--shadow), 6px 5px 11px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='cyberpunk-neon'] #themeTitle {
-    text-shadow: 0 0 7px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 13px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='aurora-glass'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 14%, transparent 86%) 0 8px, transparent 9px), repeating-linear-gradient(34deg, color-mix(in srgb, var(--text-color) 7%, transparent 93%) 0 1px, transparent 1px 10px);
-}
-[data-effect='aurora-glass'] .bento:hover {
-    transform: translate(-1px, 1px) scale(1.012);
-    box-shadow: var(--shadow), 5px 5px 12px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='aurora-glass'] #themeTitle {
-    text-shadow: 0 0 8px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 14px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='vaporwave-80s'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 15%, transparent 85%) 0 9px, transparent 10px), repeating-linear-gradient(51deg, color-mix(in srgb, var(--text-color) 8%, transparent 92%) 0 1px, transparent 1px 11px);
-}
-[data-effect='vaporwave-80s'] .bento:hover {
-    transform: translate(0px, 3px) scale(1.018);
-    box-shadow: var(--shadow), 4px 7px 13px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='vaporwave-80s'] #themeTitle {
-    text-shadow: 0 0 9px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 15px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='forest-fog'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 16%, transparent 84%) 0 10px, transparent 11px), repeating-linear-gradient(68deg, color-mix(in srgb, var(--text-color) 9%, transparent 91%) 0 1px, transparent 1px 12px);
-}
-[data-effect='forest-fog'] .bento:hover {
-    transform: translate(1px, -2px) scale(1.024);
-    box-shadow: var(--shadow), 5px 6px 14px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='forest-fog'] #themeTitle {
-    text-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 16px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='sunset-miami'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 17%, transparent 83%) 0 11px, transparent 12px), repeating-linear-gradient(85deg, color-mix(in srgb, var(--text-color) 10%, transparent 90%) 0 1px, transparent 1px 13px);
-}
-[data-effect='sunset-miami'] .bento:hover {
-    transform: translate(2px, 0px) scale(1.000);
-    box-shadow: var(--shadow), 6px 4px 15px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='sunset-miami'] #themeTitle {
-    text-shadow: 0 0 11px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 17px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='midnight-terminal'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 18%, transparent 82%) 0 12px, transparent 13px), repeating-linear-gradient(102deg, color-mix(in srgb, var(--text-color) 11%, transparent 89%) 0 1px, transparent 1px 14px);
-}
-[data-effect='midnight-terminal'] .bento:hover {
-    transform: translate(3px, 2px) scale(1.006);
-    box-shadow: var(--shadow), 7px 6px 16px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='midnight-terminal'] #themeTitle {
-    text-shadow: 0 0 12px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 18px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='paper-ink'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 19%, transparent 81%) 0 6px, transparent 7px), repeating-linear-gradient(119deg, color-mix(in srgb, var(--text-color) 12%, transparent 88%) 0 1px, transparent 1px 15px);
-}
-[data-effect='paper-ink'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.012);
-    box-shadow: var(--shadow), 7px 7px 17px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='paper-ink'] #themeTitle {
-    text-shadow: 0 0 13px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 19px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='luxury-gold'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 20%, transparent 80%) 0 7px, transparent 8px), repeating-linear-gradient(136deg, color-mix(in srgb, var(--text-color) 13%, transparent 87%) 0 1px, transparent 1px 16px);
-}
-[data-effect='luxury-gold'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.018);
-    box-shadow: var(--shadow), 6px 5px 18px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='luxury-gold'] #themeTitle {
-    text-shadow: 0 0 6px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 20px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='ice-minimal'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 21%, transparent 79%) 0 8px, transparent 9px), repeating-linear-gradient(153deg, color-mix(in srgb, var(--text-color) 14%, transparent 86%) 0 1px, transparent 1px 8px);
-}
-[data-effect='ice-minimal'] .bento:hover {
-    transform: translate(-1px, 1px) scale(1.024);
-    box-shadow: var(--shadow), 5px 5px 19px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='ice-minimal'] #themeTitle {
-    text-shadow: 0 0 7px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 12px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='toxic-lime'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 22%, transparent 78%) 0 9px, transparent 10px), repeating-linear-gradient(170deg, color-mix(in srgb, var(--text-color) 15%, transparent 85%) 0 1px, transparent 1px 9px);
-}
-[data-effect='toxic-lime'] .bento:hover {
-    transform: translate(0px, 3px) scale(1.000);
-    box-shadow: var(--shadow), 4px 7px 20px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='toxic-lime'] #themeTitle {
-    text-shadow: 0 0 8px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 13px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='deep-ocean'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 23%, transparent 77%) 0 10px, transparent 11px), repeating-linear-gradient(187deg, color-mix(in srgb, var(--text-color) 16%, transparent 84%) 0 1px, transparent 1px 10px);
-}
-[data-effect='deep-ocean'] .bento:hover {
-    transform: translate(1px, -2px) scale(1.006);
-    box-shadow: var(--shadow), 5px 6px 21px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='deep-ocean'] #themeTitle {
-    text-shadow: 0 0 9px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 14px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='neumorphism-soft-ui'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 24%, transparent 76%) 0 11px, transparent 12px), repeating-linear-gradient(204deg, color-mix(in srgb, var(--text-color) 5%, transparent 95%) 0 1px, transparent 1px 11px);
-}
-[data-effect='neumorphism-soft-ui'] .bento:hover {
-    transform: translate(2px, 0px) scale(1.012);
-    box-shadow: var(--shadow), 6px 4px 22px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='neumorphism-soft-ui'] #themeTitle {
-    text-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 15px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='brutalism-raw-web'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 25%, transparent 75%) 0 12px, transparent 13px), repeating-linear-gradient(221deg, color-mix(in srgb, var(--text-color) 6%, transparent 94%) 0 1px, transparent 1px 12px);
-}
-[data-effect='brutalism-raw-web'] .bento:hover {
-    transform: translate(3px, 2px) scale(1.018);
-    box-shadow: var(--shadow), 7px 6px 23px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='brutalism-raw-web'] #themeTitle {
-    text-shadow: 0 0 11px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 16px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='swiss-design'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 26%, transparent 74%) 0 6px, transparent 7px), repeating-linear-gradient(238deg, color-mix(in srgb, var(--text-color) 7%, transparent 93%) 0 1px, transparent 1px 13px);
-}
-[data-effect='swiss-design'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.024);
-    box-shadow: var(--shadow), 7px 7px 24px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='swiss-design'] #themeTitle {
-    text-shadow: 0 0 12px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 17px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='claymorphism-friendly-ui'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 27%, transparent 73%) 0 7px, transparent 8px), repeating-linear-gradient(255deg, color-mix(in srgb, var(--text-color) 8%, transparent 92%) 0 1px, transparent 1px 14px);
-}
-[data-effect='claymorphism-friendly-ui'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.000);
-    box-shadow: var(--shadow), 6px 5px 25px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='claymorphism-friendly-ui'] #themeTitle {
-    text-shadow: 0 0 13px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 18px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='solarpunk-eco-future'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 28%, transparent 72%) 0 8px, transparent 9px), repeating-linear-gradient(272deg, color-mix(in srgb, var(--text-color) 9%, transparent 91%) 0 1px, transparent 1px 15px);
-}
-[data-effect='solarpunk-eco-future'] .bento:hover {
-    transform: translate(-1px, 1px) scale(1.006);
-    box-shadow: var(--shadow), 5px 5px 10px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='solarpunk-eco-future'] #themeTitle {
-    text-shadow: 0 0 6px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 19px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='steampunk-victorian-tech'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 29%, transparent 71%) 0 9px, transparent 10px), repeating-linear-gradient(289deg, color-mix(in srgb, var(--text-color) 10%, transparent 90%) 0 1px, transparent 1px 16px);
-}
-[data-effect='steampunk-victorian-tech'] .bento:hover {
-    transform: translate(0px, 3px) scale(1.012);
-    box-shadow: var(--shadow), 4px 7px 11px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='steampunk-victorian-tech'] #themeTitle {
-    text-shadow: 0 0 7px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 20px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='manga-sketch'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 30%, transparent 70%) 0 10px, transparent 11px), repeating-linear-gradient(306deg, color-mix(in srgb, var(--text-color) 11%, transparent 89%) 0 1px, transparent 1px 8px);
-}
-[data-effect='manga-sketch'] .bento:hover {
-    transform: translate(1px, -2px) scale(1.018);
-    box-shadow: var(--shadow), 5px 6px 12px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='manga-sketch'] #themeTitle {
-    text-shadow: 0 0 8px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 12px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='blueprint-engineer-draft'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 31%, transparent 69%) 0 11px, transparent 12px), repeating-linear-gradient(323deg, color-mix(in srgb, var(--text-color) 12%, transparent 88%) 0 1px, transparent 1px 9px);
-}
-[data-effect='blueprint-engineer-draft'] .bento:hover {
-    transform: translate(2px, 0px) scale(1.024);
-    box-shadow: var(--shadow), 6px 4px 13px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='blueprint-engineer-draft'] #themeTitle {
-    text-shadow: 0 0 9px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 13px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='glitch-core'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 12%, transparent 88%) 0 12px, transparent 13px), repeating-linear-gradient(340deg, color-mix(in srgb, var(--text-color) 13%, transparent 87%) 0 1px, transparent 1px 10px);
-}
-[data-effect='glitch-core'] .bento:hover {
-    transform: translate(3px, 2px) scale(1.000);
-    box-shadow: var(--shadow), 7px 6px 14px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='glitch-core'] #themeTitle {
-    text-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 14px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='nordic-noir'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 13%, transparent 87%) 0 6px, transparent 7px), repeating-linear-gradient(357deg, color-mix(in srgb, var(--text-color) 14%, transparent 86%) 0 1px, transparent 1px 11px);
-}
-[data-effect='nordic-noir'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.006);
-    box-shadow: var(--shadow), 7px 7px 15px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='nordic-noir'] #themeTitle {
-    text-shadow: 0 0 11px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 15px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='pop-art'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 14%, transparent 86%) 0 7px, transparent 8px), repeating-linear-gradient(14deg, color-mix(in srgb, var(--text-color) 15%, transparent 85%) 0 1px, transparent 1px 12px);
-}
-[data-effect='pop-art'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.012);
-    box-shadow: var(--shadow), 6px 5px 16px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='pop-art'] #themeTitle {
-    text-shadow: 0 0 12px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 16px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='medieval-parchment'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 15%, transparent 85%) 0 8px, transparent 9px), repeating-linear-gradient(31deg, color-mix(in srgb, var(--text-color) 16%, transparent 84%) 0 1px, transparent 1px 13px);
-}
-[data-effect='medieval-parchment'] .bento:hover {
-    transform: translate(-1px, 1px) scale(1.018);
-    box-shadow: var(--shadow), 5px 5px 17px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='medieval-parchment'] #themeTitle {
-    text-shadow: 0 0 13px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 17px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='space-hud'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 16%, transparent 84%) 0 9px, transparent 10px), repeating-linear-gradient(48deg, color-mix(in srgb, var(--text-color) 5%, transparent 95%) 0 1px, transparent 1px 14px);
-}
-[data-effect='space-hud'] .bento:hover {
-    transform: translate(0px, 3px) scale(1.024);
-    box-shadow: var(--shadow), 4px 7px 18px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='space-hud'] #themeTitle {
-    text-shadow: 0 0 6px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 18px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='web-90s'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 17%, transparent 83%) 0 10px, transparent 11px), repeating-linear-gradient(65deg, color-mix(in srgb, var(--text-color) 6%, transparent 94%) 0 1px, transparent 1px 15px);
-}
-[data-effect='web-90s'] .bento:hover {
-    transform: translate(1px, -2px) scale(1.000);
-    box-shadow: var(--shadow), 5px 6px 19px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='web-90s'] #themeTitle {
-    text-shadow: 0 0 7px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 19px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='liquid-organic'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 18%, transparent 82%) 0 11px, transparent 12px), repeating-linear-gradient(82deg, color-mix(in srgb, var(--text-color) 7%, transparent 93%) 0 1px, transparent 1px 16px);
-}
-[data-effect='liquid-organic'] .bento:hover {
-    transform: translate(2px, 0px) scale(1.006);
-    box-shadow: var(--shadow), 6px 4px 20px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='liquid-organic'] #themeTitle {
-    text-shadow: 0 0 8px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 20px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='dark-academia'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 19%, transparent 81%) 0 12px, transparent 13px), repeating-linear-gradient(99deg, color-mix(in srgb, var(--text-color) 8%, transparent 92%) 0 1px, transparent 1px 8px);
-}
-[data-effect='dark-academia'] .bento:hover {
-    transform: translate(3px, 2px) scale(1.012);
-    box-shadow: var(--shadow), 7px 6px 21px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='dark-academia'] #themeTitle {
-    text-shadow: 0 0 9px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 12px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='holographic-iridescence'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 20%, transparent 80%) 0 6px, transparent 7px), repeating-linear-gradient(116deg, color-mix(in srgb, var(--text-color) 9%, transparent 91%) 0 1px, transparent 1px 9px);
-}
-[data-effect='holographic-iridescence'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.018);
-    box-shadow: var(--shadow), 7px 7px 22px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='holographic-iridescence'] #themeTitle {
-    text-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 13px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='raygun-gothic'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 21%, transparent 79%) 0 7px, transparent 8px), repeating-linear-gradient(133deg, color-mix(in srgb, var(--text-color) 10%, transparent 90%) 0 1px, transparent 1px 10px);
-}
-[data-effect='raygun-gothic'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.024);
-    box-shadow: var(--shadow), 6px 5px 23px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='raygun-gothic'] #themeTitle {
-    text-shadow: 0 0 11px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 14px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='frozen-carbon'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 22%, transparent 78%) 0 8px, transparent 9px), repeating-linear-gradient(150deg, color-mix(in srgb, var(--text-color) 11%, transparent 89%) 0 1px, transparent 1px 11px);
-}
-[data-effect='frozen-carbon'] .bento:hover {
-    transform: translate(-1px, 1px) scale(1.000);
-    box-shadow: var(--shadow), 5px 5px 24px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='frozen-carbon'] #themeTitle {
-    text-shadow: 0 0 12px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 15px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='polished-marble'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 23%, transparent 77%) 0 9px, transparent 10px), repeating-linear-gradient(167deg, color-mix(in srgb, var(--text-color) 12%, transparent 88%) 0 1px, transparent 1px 12px);
-}
-[data-effect='polished-marble'] .bento:hover {
-    transform: translate(0px, 3px) scale(1.006);
-    box-shadow: var(--shadow), 4px 7px 25px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='polished-marble'] #themeTitle {
-    text-shadow: 0 0 13px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 16px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='liquid-mercury'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 24%, transparent 76%) 0 10px, transparent 11px), repeating-linear-gradient(184deg, color-mix(in srgb, var(--text-color) 13%, transparent 87%) 0 1px, transparent 1px 13px);
-}
-[data-effect='liquid-mercury'] .bento:hover {
-    transform: translate(1px, -2px) scale(1.012);
-    box-shadow: var(--shadow), 5px 6px 10px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='liquid-mercury'] #themeTitle {
-    text-shadow: 0 0 6px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 17px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='recycled-plastic'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 25%, transparent 75%) 0 11px, transparent 12px), repeating-linear-gradient(201deg, color-mix(in srgb, var(--text-color) 14%, transparent 86%) 0 1px, transparent 1px 14px);
-}
-[data-effect='recycled-plastic'] .bento:hover {
-    transform: translate(2px, 0px) scale(1.018);
-    box-shadow: var(--shadow), 6px 4px 11px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='recycled-plastic'] #themeTitle {
-    text-shadow: 0 0 7px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 18px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='velvet-night'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 26%, transparent 74%) 0 12px, transparent 13px), repeating-linear-gradient(218deg, color-mix(in srgb, var(--text-color) 15%, transparent 85%) 0 1px, transparent 1px 15px);
-}
-[data-effect='velvet-night'] .bento:hover {
-    transform: translate(3px, 2px) scale(1.024);
-    box-shadow: var(--shadow), 7px 6px 12px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='velvet-night'] #themeTitle {
-    text-shadow: 0 0 8px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 19px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='slasher-80s'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 27%, transparent 73%) 0 6px, transparent 7px), repeating-linear-gradient(235deg, color-mix(in srgb, var(--text-color) 16%, transparent 84%) 0 1px, transparent 1px 16px);
-}
-[data-effect='slasher-80s'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.000);
-    box-shadow: var(--shadow), 7px 7px 13px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='slasher-80s'] #themeTitle {
-    text-shadow: 0 0 9px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 20px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='fallout-pip-boy'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 28%, transparent 72%) 0 7px, transparent 8px), repeating-linear-gradient(252deg, color-mix(in srgb, var(--text-color) 5%, transparent 95%) 0 1px, transparent 1px 8px);
-}
-[data-effect='fallout-pip-boy'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.006);
-    box-shadow: var(--shadow), 6px 5px 14px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='fallout-pip-boy'] #themeTitle {
-    text-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 12px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='dune-arrakis'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 29%, transparent 71%) 0 8px, transparent 9px), repeating-linear-gradient(269deg, color-mix(in srgb, var(--text-color) 6%, transparent 94%) 0 1px, transparent 1px 9px);
-}
-[data-effect='dune-arrakis'] .bento:hover {
-    transform: translate(-1px, 1px) scale(1.012);
-    box-shadow: var(--shadow), 5px 5px 15px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='dune-arrakis'] #themeTitle {
-    text-shadow: 0 0 11px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 13px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='biohazard'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 30%, transparent 70%) 0 9px, transparent 10px), repeating-linear-gradient(286deg, color-mix(in srgb, var(--text-color) 7%, transparent 93%) 0 1px, transparent 1px 10px);
-}
-[data-effect='biohazard'] .bento:hover {
-    transform: translate(0px, 3px) scale(1.018);
-    box-shadow: var(--shadow), 4px 7px 16px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='biohazard'] #themeTitle {
-    text-shadow: 0 0 12px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 14px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='tron-legacy'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 31%, transparent 69%) 0 10px, transparent 11px), repeating-linear-gradient(303deg, color-mix(in srgb, var(--text-color) 8%, transparent 92%) 0 1px, transparent 1px 11px);
-}
-[data-effect='tron-legacy'] .bento:hover {
-    transform: translate(1px, -2px) scale(1.024);
-    box-shadow: var(--shadow), 5px 6px 17px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='tron-legacy'] #themeTitle {
-    text-shadow: 0 0 13px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 15px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='blueprint-cyanotype'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 12%, transparent 88%) 0 11px, transparent 12px), repeating-linear-gradient(320deg, color-mix(in srgb, var(--text-color) 9%, transparent 91%) 0 1px, transparent 1px 12px);
-}
-[data-effect='blueprint-cyanotype'] .bento:hover {
-    transform: translate(2px, 0px) scale(1.000);
-    box-shadow: var(--shadow), 6px 4px 18px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='blueprint-cyanotype'] #themeTitle {
-    text-shadow: 0 0 6px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 16px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='bauhaus-original'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 13%, transparent 87%) 0 12px, transparent 13px), repeating-linear-gradient(337deg, color-mix(in srgb, var(--text-color) 10%, transparent 90%) 0 1px, transparent 1px 13px);
-}
-[data-effect='bauhaus-original'] .bento:hover {
-    transform: translate(3px, 2px) scale(1.006);
-    box-shadow: var(--shadow), 7px 6px 19px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='bauhaus-original'] #themeTitle {
-    text-shadow: 0 0 7px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 17px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='ukiyo-e'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 14%, transparent 86%) 0 6px, transparent 7px), repeating-linear-gradient(354deg, color-mix(in srgb, var(--text-color) 11%, transparent 89%) 0 1px, transparent 1px 14px);
-}
-[data-effect='ukiyo-e'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.012);
-    box-shadow: var(--shadow), 7px 7px 20px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='ukiyo-e'] #themeTitle {
-    text-shadow: 0 0 8px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 18px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='art-deco'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 15%, transparent 85%) 0 7px, transparent 8px), repeating-linear-gradient(11deg, color-mix(in srgb, var(--text-color) 12%, transparent 88%) 0 1px, transparent 1px 15px);
-}
-[data-effect='art-deco'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.018);
-    box-shadow: var(--shadow), 6px 5px 21px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='art-deco'] #themeTitle {
-    text-shadow: 0 0 9px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 19px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='soviet-constructivism'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 16%, transparent 84%) 0 8px, transparent 9px), repeating-linear-gradient(28deg, color-mix(in srgb, var(--text-color) 13%, transparent 87%) 0 1px, transparent 1px 16px);
-}
-[data-effect='soviet-constructivism'] .bento:hover {
-    transform: translate(-1px, 1px) scale(1.024);
-    box-shadow: var(--shadow), 5px 5px 22px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='soviet-constructivism'] #themeTitle {
-    text-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 20px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='infrared'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 17%, transparent 83%) 0 9px, transparent 10px), repeating-linear-gradient(45deg, color-mix(in srgb, var(--text-color) 14%, transparent 86%) 0 1px, transparent 1px 8px);
-}
-[data-effect='infrared'] .bento:hover {
-    transform: translate(0px, 3px) scale(1.000);
-    box-shadow: var(--shadow), 4px 7px 23px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='infrared'] #themeTitle {
-    text-shadow: 0 0 11px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 12px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='negative-space'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 18%, transparent 82%) 0 10px, transparent 11px), repeating-linear-gradient(62deg, color-mix(in srgb, var(--text-color) 15%, transparent 85%) 0 1px, transparent 1px 9px);
-}
-[data-effect='negative-space'] .bento:hover {
-    transform: translate(1px, -2px) scale(1.006);
-    box-shadow: var(--shadow), 5px 6px 24px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='negative-space'] #themeTitle {
-    text-shadow: 0 0 12px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 13px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='ascii-art'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 19%, transparent 81%) 0 11px, transparent 12px), repeating-linear-gradient(79deg, color-mix(in srgb, var(--text-color) 16%, transparent 84%) 0 1px, transparent 1px 10px);
-}
-[data-effect='ascii-art'] .bento:hover {
-    transform: translate(2px, 0px) scale(1.012);
-    box-shadow: var(--shadow), 6px 4px 25px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='ascii-art'] #themeTitle {
-    text-shadow: 0 0 13px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 14px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='origami'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 20%, transparent 80%) 0 12px, transparent 13px), repeating-linear-gradient(96deg, color-mix(in srgb, var(--text-color) 5%, transparent 95%) 0 1px, transparent 1px 11px);
+[data-effect='glow'] .bento {
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+    background-image: linear-gradient(145deg, rgba(255,0,127,0.14), transparent 35%), repeating-linear-gradient(90deg, rgba(252,226,5,0.12) 0 2px, transparent 2px 10px);
+}
+[data-effect='glow'] .bento:hover {
+    box-shadow: 0 0 24px rgba(252,226,5,0.6), 0 0 42px rgba(255,0,127,0.45);
+    transform: translateY(-3px);
+}
+[data-effect='glitch'] #themeTitle,
+[data-effect='neuro-glitch'] #themeTitle {
+    text-shadow: -2px 0 #ff0055, 2px 0 #00e5ff, 0 0 12px rgba(255,0,85,0.4);
+}
+[data-effect='glitch'] .bento:hover,
+[data-effect='neuro-glitch'] .bento:hover {
+    clip-path: polygon(0 4%, 100% 0, 100% 90%, 0 100%);
+    transform: translate(-3px, 3px);
+}
+[data-effect='glass'] .bento,
+[data-effect='aurora-glass'] .bento,
+[data-effect='aero-glass'] .bento {
+    border-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-image: linear-gradient(130deg, rgba(255,255,255,0.3), rgba(255,255,255,0.08));
+}
+[data-effect='glass'] .bento:hover,
+[data-effect='aurora-glass'] .bento:hover,
+[data-effect='aero-glass'] .bento:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 42px rgba(24,54,102,0.24);
+}
+[data-effect='parchment'] .bento,
+[data-effect='newspaper'] .bento,
+[data-effect='royal-folio'] .bento {
+    background-image: radial-gradient(circle at 14% 12%, rgba(120,88,36,0.09) 0 4px, transparent 5px), linear-gradient(180deg, rgba(255,245,218,0.35), rgba(174,138,87,0.08));
+    box-shadow: inset 0 0 0 1px rgba(80,55,24,0.2), inset 0 12px 24px rgba(132,96,44,0.14), 0 16px 26px rgba(48,31,14,0.2);
+}
+[data-effect='parchment'] .media-image,
+[data-effect='newspaper'] .media-image,
+[data-effect='royal-folio'] .media-image {
+    filter: sepia(0.72) contrast(0.95);
+}
+[data-effect='neu'] .bento:active {
+    box-shadow: inset 8px 8px 16px #a3b1c6, inset -8px -8px 16px #ffffff;
+}
+[data-effect='atomic-retro'] .bento {
+    background-image: repeating-linear-gradient(135deg, rgba(64,46,32,0.08) 0 8px, transparent 8px 16px), linear-gradient(170deg, rgba(166,42,42,0.1), transparent 55%);
+}
+[data-effect='hazard'] .bento:hover {
+    background-image: repeating-linear-gradient(-45deg, rgba(204,255,0,0.18) 0 10px, transparent 10px 20px);
+    box-shadow: 0 0 18px rgba(204,255,0,0.55);
+}
+[data-effect='blueprint'] .bento {
+    background-image: linear-gradient(rgba(234,244,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(234,244,255,0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+[data-effect='carbon'] .bento {
+    background-image: linear-gradient(45deg, rgba(255,255,255,0.04) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.04) 75%, transparent 75%, transparent);
+    background-size: 14px 14px;
+}
+[data-effect='mercury'] .bento {
+    background-image: linear-gradient(160deg, rgba(255,255,255,0.62), rgba(255,255,255,0.08));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), inset 0 -10px 18px rgba(100,108,120,0.18), var(--shadow);
+}
+[data-effect='vhs'] .bento:hover {
+    transform: translateY(-2px) skewX(-1deg);
+    box-shadow: 0 0 0 2px rgba(255,0,76,0.3), 0 0 20px rgba(0,255,255,0.28);
+}
+[data-effect='pipboy'] .bento {
+    box-shadow: inset 0 0 24px rgba(123,255,111,0.15), 0 0 18px rgba(123,255,111,0.16);
+}
+[data-effect='tron'] .bento:hover {
+    box-shadow: inset 0 0 0 1px var(--border-color), 0 0 22px rgba(0,184,255,0.55);
+}
+[data-effect='ascii'] .bento::before {
+    content: '>_';
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    opacity: 0.5;
+    font-size: 0.7rem;
 }
 [data-effect='origami'] .bento:hover {
-    transform: translate(3px, 2px) scale(1.018);
-    box-shadow: var(--shadow), 7px 6px 10px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='origami'] #themeTitle {
-    text-shadow: 0 0 6px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 15px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
+    transform: translateY(-4px) rotate(-0.5deg);
 }
 [data-effect='underwater-abyss'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 21%, transparent 79%) 0 6px, transparent 7px), repeating-linear-gradient(113deg, color-mix(in srgb, var(--text-color) 6%, transparent 94%) 0 1px, transparent 1px 12px);
+    box-shadow: inset 0 0 40px rgba(5,20,48,0.42), 0 20px 32px rgba(1,8,20,0.6);
 }
-[data-effect='underwater-abyss'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.024);
-    box-shadow: var(--shadow), 7px 7px 11px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
+[data-effect='neural'] .bento {
+    background-image: radial-gradient(circle at 10% 20%, rgba(231,93,140,0.15) 0 2px, transparent 3px), radial-gradient(circle at 70% 60%, rgba(139,147,165,0.15) 0 2px, transparent 3px);
 }
-[data-effect='underwater-abyss'] #themeTitle {
-    text-shadow: 0 0 7px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 16px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
+[data-effect='lcars'] .bento {
+    border-radius: 40px 8px 40px 8px;
 }
-[data-effect='neural-link'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 22%, transparent 78%) 0 7px, transparent 8px), repeating-linear-gradient(130deg, color-mix(in srgb, var(--text-color) 7%, transparent 93%) 0 1px, transparent 1px 13px);
-}
-[data-effect='neural-link'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.000);
-    box-shadow: var(--shadow), 6px 5px 12px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='neural-link'] #themeTitle {
-    text-shadow: 0 0 8px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 17px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='star-trek-lcars'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 23%, transparent 77%) 0 8px, transparent 9px), repeating-linear-gradient(147deg, color-mix(in srgb, var(--text-color) 8%, transparent 92%) 0 1px, transparent 1px 14px);
-}
-[data-effect='star-trek-lcars'] .bento:hover {
-    transform: translate(-1px, 1px) scale(1.006);
-    box-shadow: var(--shadow), 5px 5px 13px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='star-trek-lcars'] #themeTitle {
-    text-shadow: 0 0 9px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 18px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='hologram-blue'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 24%, transparent 76%) 0 9px, transparent 10px), repeating-linear-gradient(164deg, color-mix(in srgb, var(--text-color) 9%, transparent 91%) 0 1px, transparent 1px 15px);
-}
-[data-effect='hologram-blue'] .bento:hover {
-    transform: translate(0px, 3px) scale(1.012);
-    box-shadow: var(--shadow), 4px 7px 14px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='hologram-blue'] #themeTitle {
-    text-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 19px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='nanotech'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 25%, transparent 75%) 0 10px, transparent 11px), repeating-linear-gradient(181deg, color-mix(in srgb, var(--text-color) 10%, transparent 90%) 0 1px, transparent 1px 16px);
-}
-[data-effect='nanotech'] .bento:hover {
-    transform: translate(1px, -2px) scale(1.018);
-    box-shadow: var(--shadow), 5px 6px 15px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='nanotech'] #themeTitle {
-    text-shadow: 0 0 11px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 20px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='white-room'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 26%, transparent 74%) 0 11px, transparent 12px), repeating-linear-gradient(198deg, color-mix(in srgb, var(--text-color) 11%, transparent 89%) 0 1px, transparent 1px 8px);
-}
-[data-effect='white-room'] .bento:hover {
-    transform: translate(2px, 0px) scale(1.024);
-    box-shadow: var(--shadow), 6px 4px 16px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='white-room'] #themeTitle {
-    text-shadow: 0 0 12px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 12px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='old-newspaper'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 27%, transparent 73%) 0 12px, transparent 13px), repeating-linear-gradient(215deg, color-mix(in srgb, var(--text-color) 12%, transparent 88%) 0 1px, transparent 1px 9px);
-}
-[data-effect='old-newspaper'] .bento:hover {
-    transform: translate(3px, 2px) scale(1.000);
-    box-shadow: var(--shadow), 7px 6px 17px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='old-newspaper'] #themeTitle {
-    text-shadow: 0 0 13px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 13px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='chalkboard'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 28%, transparent 72%) 0 6px, transparent 7px), repeating-linear-gradient(232deg, color-mix(in srgb, var(--text-color) 13%, transparent 87%) 0 1px, transparent 1px 10px);
-}
-[data-effect='chalkboard'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.006);
-    box-shadow: var(--shadow), 7px 7px 18px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='chalkboard'] #themeTitle {
-    text-shadow: 0 0 6px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 14px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='lego-brick'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 29%, transparent 71%) 0 7px, transparent 8px), repeating-linear-gradient(249deg, color-mix(in srgb, var(--text-color) 14%, transparent 86%) 0 1px, transparent 1px 11px);
-}
-[data-effect='lego-brick'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.012);
-    box-shadow: var(--shadow), 6px 5px 19px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='lego-brick'] #themeTitle {
-    text-shadow: 0 0 7px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 15px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='luxury-yacht'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 30%, transparent 70%) 0 8px, transparent 9px), repeating-linear-gradient(266deg, color-mix(in srgb, var(--text-color) 15%, transparent 85%) 0 1px, transparent 1px 12px);
-}
-[data-effect='luxury-yacht'] .bento:hover {
-    transform: translate(-1px, 1px) scale(1.018);
-    box-shadow: var(--shadow), 5px 5px 20px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='luxury-yacht'] #themeTitle {
-    text-shadow: 0 0 8px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 16px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='post-apocalyptic'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 31%, transparent 69%) 0 9px, transparent 10px), repeating-linear-gradient(283deg, color-mix(in srgb, var(--text-color) 16%, transparent 84%) 0 1px, transparent 1px 13px);
-}
-[data-effect='post-apocalyptic'] .bento:hover {
-    transform: translate(0px, 3px) scale(1.024);
-    box-shadow: var(--shadow), 4px 7px 21px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='post-apocalyptic'] #themeTitle {
-    text-shadow: 0 0 9px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 17px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='neuro-glitch'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 12%, transparent 88%) 0 10px, transparent 11px), repeating-linear-gradient(300deg, color-mix(in srgb, var(--text-color) 5%, transparent 95%) 0 1px, transparent 1px 14px);
-}
-[data-effect='neuro-glitch'] .bento:hover {
-    transform: translate(1px, -2px) scale(1.000);
-    box-shadow: var(--shadow), 5px 6px 22px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='neuro-glitch'] #themeTitle {
-    text-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 18px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='royal-folio'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 13%, transparent 87%) 0 11px, transparent 12px), repeating-linear-gradient(317deg, color-mix(in srgb, var(--text-color) 6%, transparent 94%) 0 1px, transparent 1px 15px);
-}
-[data-effect='royal-folio'] .bento:hover {
-    transform: translate(2px, 0px) scale(1.006);
-    box-shadow: var(--shadow), 6px 4px 23px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='royal-folio'] #themeTitle {
-    text-shadow: 0 0 11px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 19px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='brutal-cardboard'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 14%, transparent 86%) 0 12px, transparent 13px), repeating-linear-gradient(334deg, color-mix(in srgb, var(--text-color) 7%, transparent 93%) 0 1px, transparent 1px 16px);
-}
-[data-effect='brutal-cardboard'] .bento:hover {
-    transform: translate(3px, 2px) scale(1.012);
-    box-shadow: var(--shadow), 7px 6px 24px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='brutal-cardboard'] #themeTitle {
-    text-shadow: 0 0 12px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 20px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
-[data-effect='aero-glass'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 15%, transparent 85%) 0 6px, transparent 7px), repeating-linear-gradient(351deg, color-mix(in srgb, var(--text-color) 8%, transparent 92%) 0 1px, transparent 1px 8px);
-}
-[data-effect='aero-glass'] .bento:hover {
-    transform: translate(-3px, -3px) scale(1.018);
-    box-shadow: var(--shadow), 7px 7px 25px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
-}
-[data-effect='aero-glass'] #themeTitle {
-    text-shadow: 0 0 13px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 12px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
-}
+[data-effect='hologram'] .bento,
 [data-effect='cyber-terminal'] .bento {
-    background-image: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent-color) 16%, transparent 84%) 0 7px, transparent 8px), repeating-linear-gradient(8deg, color-mix(in srgb, var(--text-color) 9%, transparent 91%) 0 1px, transparent 1px 9px);
+    background-image: linear-gradient(rgba(124,215,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(124,215,255,0.08) 1px, transparent 1px);
+    background-size: 18px 18px;
 }
+[data-effect='hologram'] .bento:hover,
 [data-effect='cyber-terminal'] .bento:hover {
-    transform: translate(-2px, -1px) scale(1.024);
-    box-shadow: var(--shadow), 6px 5px 10px color-mix(in srgb, var(--accent-alt) 38%, transparent 62%);
+    box-shadow: inset 0 0 20px rgba(255,0,60,0.3), 0 0 24px rgba(124,215,255,0.35);
 }
-[data-effect='cyber-terminal'] #themeTitle {
-    text-shadow: 0 0 6px color-mix(in srgb, var(--accent-color) 34%, transparent 66%), 0 0 13px color-mix(in srgb, var(--accent-alt) 28%, transparent 72%);
+[data-effect='lego'] .bento:active {
+    transform: translateY(3px);
+}
+[data-effect='wasteland'] .bento {
+    background-image: radial-gradient(circle at 82% 14%, rgba(163,78,44,0.3), transparent 28%), radial-gradient(circle at 20% 80%, rgba(80,45,32,0.34), transparent 36%), repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 8px);
+}
+[data-effect='sunlines'] .bento {
+    background-image: linear-gradient(160deg, rgba(255,255,255,0.08), transparent 50%), repeating-linear-gradient(90deg, rgba(237,143,3,0.1) 0 1px, transparent 1px 9px);
 }
