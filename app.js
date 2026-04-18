@@ -207,6 +207,16 @@ function handleManualThemeSelect(themeId) {
     setPickerOpenState(false);
 }
 
+function stepTheme(direction) {
+    const currentIndex = themeList.findIndex((theme) => theme.id === activeThemeId);
+    if (currentIndex < 0) {
+        return;
+    }
+    const nextIndex = (currentIndex + direction + themeList.length) % themeList.length;
+    resetUnusedThemePool();
+    activateTheme(themeList[nextIndex].id);
+}
+
 async function exportActiveThemeCss() {
     const theme = themeMap.get(activeThemeId);
     if (!theme) {
@@ -266,6 +276,21 @@ document.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
+    const tagName = event.target?.tagName;
+    const isTypingTarget = tagName === 'INPUT' || tagName === 'TEXTAREA' || event.target?.isContentEditable;
+    if (isTypingTarget) {
+        return;
+    }
+    if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        stepTheme(1);
+        return;
+    }
+    if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        stepTheme(-1);
+        return;
+    }
     if (event.key === 'Escape') {
         setPickerOpenState(false);
     }

@@ -600,9 +600,49 @@ const themesCatalog = [
 
 ];
 
-export const themes = Object.freeze(themesCatalog.map((theme) => ({
+const physicsFonts = [
+    "'Inter', sans-serif",
+    "'Manrope', sans-serif",
+    "'Orbitron', sans-serif",
+    "'Fira Code', monospace",
+    "'Playfair Display', serif",
+    "'Courier Prime', monospace"
+];
+
+const physicsBorderStyles = ['solid', 'double', 'dashed', 'groove', 'ridge', 'outset', 'inset'];
+const physicsScaleSteps = [0.8, 0.84, 0.88, 0.92, 0.96, 1, 1.04, 1.08, 1.12, 1.16, 1.2];
+const physicsPaddingSteps = [0.8, 1, 1.2, 1.4, 1.7, 2, 2.3, 2.6, 3, 3.4];
+const physicsRadiusSteps = [0, 2, 4, 8, 12, 16, 22, 28, 36, 48];
+const physicsBorderWidthSteps = [1, 2, 3, 4, 5, 6];
+
+function hashThemeId(themeId) {
+    return [...themeId].reduce((acc, char) => ((acc << 5) - acc) + char.charCodeAt(0), 0);
+}
+
+function buildPhysicalTokens(theme, index) {
+    const hash = Math.abs(hashThemeId(theme.id));
+    const borderStyle = physicsBorderStyles[(hash + index) % physicsBorderStyles.length];
+    const textScale = physicsScaleSteps[(hash + index * 3) % physicsScaleSteps.length];
+    const cardPadding = physicsPaddingSteps[(hash + index * 5) % physicsPaddingSteps.length];
+    const radius = physicsRadiusSteps[(hash + index * 7) % physicsRadiusSteps.length];
+    const borderWidth = physicsBorderWidthSteps[(hash + index * 11) % physicsBorderWidthSteps.length];
+    const font = physicsFonts[(hash + index * 13) % physicsFonts.length];
+
+    return {
+        ...theme.tokens,
+        effect: theme.id,
+        borderStyle,
+        textScale: textScale.toFixed(2),
+        cardPadding: `${cardPadding.toFixed(1)}rem`,
+        radius: `${radius}px`,
+        borderWidth: `${borderWidth}px`,
+        font
+    };
+}
+
+export const themes = Object.freeze(themesCatalog.map((theme, index) => ({
     ...theme,
-    tokens: { ...theme.tokens }
+    tokens: buildPhysicalTokens(theme, index)
 })));
 
 export const themeTokenLegend = Object.freeze({
